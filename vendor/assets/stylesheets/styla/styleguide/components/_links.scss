@@ -1,0 +1,120 @@
+// Solo referencias de nombre
+// Aqui se nombra cualquier conjunto de colores del que se deseen links
+$link-colors: primary, secondary;
+
+@mixin master-link-creator($normal, $hover){
+  color: $normal !important;
+  text-decoration: none;
+  font-weight: map-get($font-weights, regular);
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+  > i:first-child {
+    margin-right: map-get($sizes, 3) !important;
+  }
+  > i:last-child {
+    margin-left: map-get($sizes, 3) !important;
+  }
+
+  &:hover{
+    color: $hover !important;
+  }
+  
+  &:active{
+    color: $normal !important;
+  }
+
+  &:focus-visible, &:focus {
+    color: $hover !important;
+    outline: -webkit-focus-ring-color auto 1px;
+    outline-style: none;
+    outline-width: 0px;
+    box-shadow: 0 0 0 .25em rgba(map-get($primary, 500), .5);
+  }
+}
+
+@mixin wide-link-creator($text, $bg, $text-sub) {
+  /* ESTILOS GENERALES PARA LA LISTA */
+
+  /* Padding general para el exterior del navbar*/
+
+
+  /* LOS ELEMENTOS DE LISTA SE CONSIDERAN COMPONENTES A PARTE, LOS MENU ITEM CONTAINER */
+  > li, > li > ul > li {
+    > a {
+      transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: map-get($sizes, 3) map-get($sizes, 4);
+      font-size: map-get($sizes, 4);
+      color: $text;
+      text-decoration: none;
+      
+      &:hover {
+        background-color: $bg;
+        color: $text-sub;
+      }
+
+      &:focus-visible {
+        outline-style: none;
+        outline-width: 0px;
+        box-shadow: 0 0 0 .25em rgba(map-get($primary, 500), 1);
+      }
+      > span {
+        display: flex;
+        align-items: center;
+
+        > i {
+          margin-right: map-get($sizes, 3);
+          text-align: center;
+          width: 24px;
+        }
+      }
+      >div {
+        text-align: center;
+        width: fit-content;
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+
+  > li > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    > li > a {
+      font-weight: 400;
+      color: $text;
+    }
+  }
+}
+
+
+
+// Common links
+
+.link-primary{
+  font-weight: map-get($font-weights, medium) !important;
+  @include master-link-creator(map-get($primary, 700), map-get($primary, 500));
+}
+
+.link-secondary{
+  font-weight: map-get($font-weights, medium) !important;
+  @include master-link-creator(map-get($secondary, 700), map-get($secondary, 500));
+}
+
+.link-subtle{
+  font-weight: map-get($font-weights, regular) !important;
+  @include master-link-creator(map-get($grayscale, 900), map-get($primary, 500));
+}
+
+.link-subtle-dark{
+  font-weight: map-get($font-weights, regular) !important;
+  @include master-link-creator(map-get($grayscale, 100), map-get($primary, 500));
+}
+
+// Wide links

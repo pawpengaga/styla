@@ -1,0 +1,35 @@
+// MIXIN
+
+@mixin master-badges-creator($colors){
+  @each $color_key, $color_value in $colors{
+    .badge-#{$color_key}{
+      font-weight: map-get($font-weights, medium);
+      border-radius: 5px;
+      border: 1px solid map-get($color_value, 600);
+      background-color: map-get($color_value, 400);
+      text-transform: uppercase;
+      color: white;
+      padding: 0.1em map-get($sizes, 2);
+
+      & + .badge-#{$color_key}{
+        margin-right: .3em;
+        display: inline-block;
+        margin-bottom: .5em;
+      }
+    }
+  }
+}
+
+// DATA
+
+$colors: (
+  'primary': $primary,
+  'success': $success,
+  'info': $info,
+  'warning': $warning,
+  'danger': $danger
+);
+
+// RULES
+
+@include master-badges-creator($colors);

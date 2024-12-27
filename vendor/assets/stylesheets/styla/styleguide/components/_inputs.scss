@@ -1,0 +1,175 @@
+// Mixins - GENERAL
+@mixin master-input {
+  border-radius: 5px;
+  border-color: map-get($grayscale, 200);
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  // Estados
+  &:hover{
+    outline-offset: 1px;
+  }
+  &:focus{
+    border-color: rgba(map-get($primary, 400), 1);
+    box-shadow: 0 0 0 .25em rgba(map-get($primary, 500), .5);
+  }
+
+  // Psudoelementos
+  &::placeholder{
+    color: map-get($grayscale, 500);
+  }
+}
+
+@mixin checkeable-input {
+  // Estilos de input generales
+  @include master-input();
+  // Opciones propias comunes a radio y checkbox
+  &:checked{
+    background-color: rgba(map-get($primary, 500), 1);
+    border-color: rgba(map-get($primary, 600), .1);
+  }
+}
+
+// Mixins - TOM
+@mixin master-input-tom {
+  border-radius: 5px;
+  border-color: map-get($grayscale, 200);
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  // Estados
+  &:hover{
+    outline-offset: 1px;
+  }
+  &:focus{
+    border-color: rgba(map-get($primary, 400), 1) !important;
+    box-shadow: 0 0 0 .25em rgba(map-get($primary, 500), .5) !important;
+  }
+
+  // Psudoelementos
+  &::placeholder{
+    color: map-get($grayscale, 500);
+  }
+}
+
+@mixin checkeable-input {
+  // Estilos de input generales
+  @include master-input();
+  // Opciones propias comunes a radio y checkbox
+  &:checked{
+    background-color: rgba(map-get($primary, 500), 1);
+    border-color: rgba(map-get($primary, 600), .1);
+  }
+}
+
+/*
+*
+* MIXINS A
+* RULES  V
+*
+*/
+
+
+// Rules
+//General
+
+.form-label {
+  color: map-get($grayscale, 900);
+  font-weight: map-get($font-weights, medium);
+}
+
+
+// Clases generales de inputs
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="file"],
+input[type="date"] {
+  @include master-input();
+  height: map-get($sizes, 8);
+}
+
+// TOM SELECT SOBRE ESCRIBE LOS ESTILOS
+// Los estilos aqui especificados FUNCIONAN
+// En un primer ciclo de carga de la pagina
+
+// Modificaciones especificas para tom-select
+.ts-control,
+.ts-dropdown
+.ts-control input,
+.ts-dropdown input
+.ts-control:active,
+.ts-dropdown:active {
+  @include master-input-tom();
+  height: map-get($sizes, 8);
+}
+
+input[type="file"]::file-selector-button{
+  // background-color: map-get($grayscale, 500) !important;
+  color: map-get($grayscale, 900) !important;
+  height: 40px; // Medida estatica para solicionar error. Cambiar a futuro.
+  overflow: hidden;
+  cursor: pointer;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  @include checkeable-input();
+}
+
+.form-select {
+  @include master-input();
+  min-height: map-get($sizes, 8);
+}
+
+
+// Input icons
+
+.input-icon-left {
+  position: relative;
+  
+  i {
+    position: absolute;
+    left: 1em;
+    top: 30%;
+    transform: translateY(-50%);
+    color: map-get($grayscale, 700);
+    pointer-events: none;
+    font-size: map-get($sizes, 4);
+  }
+  input {
+    padding-left: 2.7em;
+  }
+}
+
+.input-icon-right {
+  position: relative;
+  
+  i {
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+    color: map-get($grayscale, 700);
+    font-size: map-get($sizes, 4);
+    pointer-events: none;
+
+    &.first-icon {
+      left: 1em;
+    }
+
+    &.last-icon {
+      right: 1em;
+      pointer-events: auto;
+      cursor: pointer;
+    }
+  }
+
+  input {
+    padding-right: 2.7em;
+    padding-left: 2.7em;
+  }
+}
+
+/******************************/
+// ESTADOS TEMPORALES
+/******************************/
+.warning-input {
+  border-color: rgba(map-get($danger, 500), 1) !important;
+  box-shadow: 0 0 0 .25em rgba(map-get($danger, 400), .9) !important;
+}

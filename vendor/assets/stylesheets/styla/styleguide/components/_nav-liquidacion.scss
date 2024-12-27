@@ -1,0 +1,44 @@
+.nav-liquidaciones {
+
+    .nav-fill {
+      background-color:  #FFE5AC;
+    }
+
+    .nav-item {
+      width: 200px;
+    }
+
+    .nav-link {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .nav-link p{
+      font-weight: bold;
+      color: black;
+    }
+
+    .nav-link span{
+      font-weight: bold;
+      color: #F1F1F2;
+      background-color: #321709;
+      width: 25px;
+      border-radius: 50%;
+    }
+
+    .b-end{
+      border-right:1px solid #FFCD3E;
+    }
+
+    .nav-link.active {
+      background-color: #FFC107;
+    }
+
+
+
+  }

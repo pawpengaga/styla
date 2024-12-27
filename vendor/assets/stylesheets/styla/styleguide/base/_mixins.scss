@@ -1,0 +1,93 @@
+// TYPOGRAPHY
+
+@mixin fw-generator($map){
+  @each $key, $value in $map{
+    .fw-#{$value}{
+      font-weight: $value;
+    }
+  }
+}
+
+@mixin fs-generator($map, $toggler){
+  @each $key, $value in $map {
+    @if ($toggler == 'class'){
+      //Class mode
+      .fs-#{$key}{
+        font-size: map-get($map: $value, $key: size);
+        line-height: map-get($map: $value, $key: height);
+      }
+    }@else if ($toggler == 'tag'){
+      //Tag mode
+      #{$key}{
+        font-size: map-get($map: $value, $key: size);
+        line-height: map-get($map: $value, $key: height);
+      }
+    }
+  }
+}
+
+// SPACING
+
+@mixin spacing-generator($map, $tag){
+  $tagid: str-slice($tag, 1, 1);
+  @each $key, $value in $map {
+    .#{$tagid}-#{$key} {
+      #{$tag}: $value;
+    }
+    .#{$tagid}x-#{$key} {
+      #{$tag}-left: $value;
+      #{$tag}-right: $value;
+    }
+    .#{$tagid}y-#{$key} {
+      #{$tag}-top: $value;
+      #{$tag}-bottom: $value;
+    }
+    .#{$tagid}t-#{$key} {
+      #{$tag}-top: $value;
+    }
+    .#{$tagid}b-#{$key} {
+      #{$tag}-bottom: $value;
+    }
+    .#{$tagid}s-#{$key} {
+      #{$tag}-left: $value;
+    }
+    .#{$tagid}e-#{$key} {
+      #{$tag}-right: $value;
+    }
+  }
+}
+
+@mixin gap-generator($map){
+  @each $key, $value in $map {
+    .gap-#{$key}{
+      gap: $value;
+    }
+  }
+}
+
+// COLORING
+
+@mixin color-generator($map, $name) {
+  @each $key, $value in $map {
+    .bg-#{$name}-#{$key} {
+      background-color: $value;
+    }
+    .text-#{$name}-#{$key} {
+      color: $value;
+    }
+    .border-#{$name}-#{$key} {
+      border-color: $value;
+    }
+    @if ($key == 500) {
+      .bg-#{$name}-10 {
+        background-color: rgba($value, 0.1);
+      }
+      .text-#{$name}-10 {
+        color: rgba($value, 0.1);
+      }
+      .border-#{$name}-10 {
+        border-color: rgba($value, 0.1);
+      }
+    }
+  }
+}

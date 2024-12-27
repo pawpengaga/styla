@@ -1,0 +1,42 @@
+
+.pagination {
+
+  font-weight: map-get($map: $font-weights, $key: bold);
+  color: map-get($primary, 900);
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: map-get($sizes, 4);
+  
+
+  .page-item{
+    .page-link{
+      padding-left: 0.8em; // PELIGRO: MEDIDA CUSTOM
+      padding-right: 0.8em; // PELIGRO: MEDIDA CUSTOM
+      border-radius: 50%;
+      color: map-get($primary, 900);
+      border: none;
+      &:focus{
+        border-color: rgba(map-get($primary, 400), 1);
+        box-shadow: 0 0 0 .25em rgba(map-get($primary, 500), .5);
+        background-color: rgba(map-get($primary, 500), .1);
+      }
+      &:hover {
+        background-color: rgba(map-get($primary, 200), 1);
+      }
+    }
+  }
+
+  // .page-link:first-child, .page-link:last-child {
+  //   border-radius: inherit;
+  // }
+}
+
+.active .page-link {
+  background-color: map-get($primary, 500);
+}
+
+.disabled .page-link {
+  background-color: map-get($grayscale, 100);
+  color: map-get($primary, 800) !important;
+}

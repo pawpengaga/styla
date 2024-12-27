@@ -1,0 +1,33 @@
+/* Scroll personalizado aplicable a cualquier elemento con la clase "custom-scrollbar" */
+
+.overflow-scrollbar {
+  // transition: width 0.3s ease;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
+.overflow-scrollbar::-webkit-scrollbar{
+  width: 7px;
+  background-color: map-get($grayscale, 200);
+}
+
+.overflow-scrollbar::-webkit-scrollbar-thumb{
+  background-color: map-get($grayscale, 300);
+  border-radius: 5px;
+}
+
+/* Hover de tamano, agrega espacio y desconfigura 
+.overflow-scrollbar:hover::-webkit-scrollbar{
+  width: 10px;
+}
+*/
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: map-get($grayscale, 200);
+}
+
+body::-webkit-scrollbar-thumb{
+  background-color: map-get($grayscale, 300);
+  border-radius: 8px;
+}

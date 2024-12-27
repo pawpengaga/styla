@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title> Descuentos</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" href="../../style.css">
+
+    </head>
+  
+    <body style="background-color: grey;">
+
+      <h1>Nombre de las vistas</h1> <br><br>
+
+      <div class="tab-content border container mt-4 pe-0" id="myTabContent"> <!---Esto no se pega en el proyecto-->
+        <div class="d-flex align-items-start num-liqui">
+          <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <button class="nav-link active btn-circle" id="v-pills-1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-1" type="button" role="tab" aria-controls="v-pills-1" aria-selected="true">3.1</button>
+            </div>
+          <div class="border window-white container">
+            <div class="tab-content m-4" id="v-pills-tabContent">
+              <!-- Alerta -->
+              <div class="d-none alert-danger d-flex justify-content-between align-items-center px-4 py-3 ">
+                  <div>
+                  <i class="fa-solid fa-circle-xmark me-2"></i>
+                  <span><strong>Los indicadores previsionales</strong> aún no están disponibles para este mes</span>
+                  </div>
+                  <i class="fa-solid fa-xmark"></i>
+              </div>
+              <!--Fin Alerta-->  
+
+              <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab" tabindex="0">
+                <!-- Descuentos -->
+                <div>
+                  <!-- Título -->
+                  <h4 class="fw-bold mt-5">Descuentos</h4>
+
+                  <!-- Formulario -->
+                  <form class="row g-4 mt-3">
+                    <!-- Primera Fila -->
+                    <div class="col-12 col-md-6">
+                      <label for="cotizacion-previsional" class="form-label fw-bold d-block">Cotización obligatoria previsional (AFP o IPS) (3141) 
+                        <span class="badge-danger ms-2">OBLIGATORIO</span>
+                      </label>
+                      <input type="text" id="cotizacion-previsional" class="form-control" placeholder="">
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <label for="cotizacion-salud" class="form-label fw-bold d-block">Cotización obligatoria salud 7% (3143) 
+                        <span class="badge-danger ms-2">OBLIGATORIO</span>
+                      </label>
+                      <input type="text" id="cotizacion-salud" class="form-control" placeholder="">
+                    </div>
+                  </form>
+
+                  <hr class="my-4">
+
+                  <!-- Cálculo de Cotización Voluntaria para Salud -->
+                  <h4 class="fw-bold mt-4">Cálculo de Cotización voluntaria para salud (3144)</h4>
+                  <p>Le pedimos el ingreso de los siguientes valores para para realizar el cálculo:</p>
+
+                  <!-- Formulario -->
+                  <form class="row g-4 mt-3">
+                    <div class="col-12">
+                      <label for="pago-institucion" class="form-label fw-bold d-block">Pago de la institución de salud</label>
+                      <input type="text" id="pago-institucion" class="form-control" placeholder="">
+                    </div>
+                  </form>
+
+                  <!-- Resultado del cálculo -->
+                  <div class="alert-success px-4 py-3 mt-4 row">
+                    <p class="fw-bold text-success-900 pb-3 ps-0">
+                      <i class="fa fa-arrow-right me-2 text-success-500"></i>Valor total del cálculo
+                    </p>
+                    <p class="text-gray-900 pb-2 ps-0">Cotización voluntaria para salud (3144)</p>
+                    <input type="text" id="valor-total-cotizacion-salud" class="form-control mt-2" placeholder="00000" disabled>
+                  </div>
+
+
+
+                <hr class="my-4">
+
+                <!-- Cotizaciones y Descuentos -->
+                <div>
+                  <!-- Formulario -->
+                  <form class="row g-4 mt-3">
+                    <!-- Primera Fila -->
+                    <div class="col-12 col-md-6">
+                      <label for="cotizacion-afc-trabajador" class="form-label fw-bold d-block">Cotización AFC - trabajador (3151)</label>
+                      <input type="text" id="cotizacion-afc-trabajador" class="form-control" placeholder="">
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <label for="cotizaciones-extranjero" class="form-label fw-bold d-block">Cotizaciones técnico extranjero para seguridad social fuera de Chile (3146)</label>
+                      <input type="text" id="cotizaciones-extranjero" class="form-control" placeholder="">
+                    </div>
+
+                    <!-- Segunda Fila -->
+                    <div class="col-12 col-md-6">
+                      <label for="descuento-deposito" class="form-label fw-bold d-block">Descuento depósito convenido hasta UF 900 anual (3147)</label>
+                      <input type="text" id="descuento-deposito" class="form-control" placeholder="">
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <label for="cotizacion-afc-trabajador-2" class="form-label fw-bold d-block">Cotización AFC - trabajador (3151)</label>
+                      <input type="text" id="cotizacion-afc-trabajador-2" class="form-control" placeholder="">
+                    </div>
+
+                    <!-- Tercera Fila -->
+                    <div class="col-12">
+                      <label for="cotizacion-modalidad-a" class="form-label fw-bold d-block">Cotización ahorro previsional voluntario individual modalidad A (3155)</label>
+                      <input type="text" id="cotizacion-modalidad-a" class="form-control" placeholder="">
+                    </div>
+
+                    <!-- Cuarta Fila -->
+                    <div class="col-12">
+                      <label for="cotizacion-modalidad-b" class="form-label fw-bold d-block">Cotización ahorro previsional voluntario individual modalidad B hasta UF 50 (3156)</label>
+                      <input type="text" id="cotizacion-modalidad-b" class="form-control" placeholder="">
+                    </div>
+
+                    <!-- Quinta Fila -->
+                    <div class="col-12">
+                      <label for="cotizacion-colectivo-a" class="form-label fw-bold d-block">Cotización ahorro previsional voluntario colectivo modalidad A (3157)</label>
+                      <input type="text" id="cotizacion-colectivo-a" class="form-control" placeholder="">
+                    </div>
+
+                    <!-- Sexta Fila -->
+                    <div class="col-12">
+                      <label for="cotizacion-colectivo-b" class="form-label fw-bold d-block">Cotización ahorro previsional voluntario colectivo modalidad B hasta UF 50 (3158)</label>
+                      <input type="text" id="cotizacion-colectivo-b" class="form-control" placeholder="">
+                    </div>
+
+                    <!-- Séptima Fila -->
+                    <div class="col-12 col-md-6">
+                      <label for="trabajo-pesado" class="form-label fw-bold d-block">Cotización adicional trabajo pesado - trabajador (3154)</label>
+                      <input type="text" id="trabajo-pesado" class="form-control" placeholder="">
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <label for="impuesto-retenido" class="form-label fw-bold d-block">Impuesto retenido por remuneraciones (3161) 
+                        <span class="badge-danger ms-2">OBLIGATORIO</span>
+                      </label>
+                      <input type="text" id="impuesto-retenido" class="form-control" placeholder="">
+                    </div>
+                  </form>
+
+                  <!-- Impuestos y Cuotas Sindicales -->
+                  <div>
+                    <!-- Formulario -->
+                    <form class="row g-4 mt-3">
+                      <!-- Primera Fila -->
+                      <div class="col-12 col-md-6">
+                        <label for="impuesto-indemnizaciones" class="form-label fw-bold d-block">Impuesto retenido por indemnizaciones (3162)</label>
+                        <input type="text" id="impuesto-indemnizaciones" class="form-control" placeholder="">
+                      </div>
+                      
+                      <div class="col-12 col-md-6">
+                        <label for="mayor-retencion" class="form-label fw-bold d-block">Mayor retención de impuestos solicitada por el trabajador (3163)</label>
+                        <input type="text" id="mayor-retencion" class="form-control" placeholder="">
+                      </div>
+
+                      <!-- Segunda Fila -->
+                      <div class="col-12">
+                        <label for="impuesto-reliquidacion" class="form-label fw-bold d-block">Impuesto retenido por reliquidación remuneraciones devengadas en otros períodos (3164)</label>
+                        <input type="text" id="impuesto-reliquidacion" class="form-control" placeholder="">
+                      </div>
+
+                      <!-- Tercera Fila -->
+                      <div class="col-12">
+                        <label for="diferencia-impuesto" class="form-label fw-bold d-block">Diferencia de impuesto por reliquidación remuneraciones devengadas en este período (3165)</label>
+                        <input type="text" id="diferencia-impuesto" class="form-control" placeholder="">
+                      </div>
+
+                      <!-- Cuarta Fila -->
+                      <div class="col-12">
+                        <label for="retencion-prestamo" class="form-label fw-bold d-block">Retención préstamo clase media 2020 (Ley 21.252) (3166)</label>
+                        <input type="text" id="retencion-prestamo" class="form-control" placeholder="">
+                      </div>
+
+                      <!-- Quinta Fila -->
+                      <div class="col-12">
+                        <label for="rebaja-zona" class="form-label fw-bold d-block">Rebaja zona extrema DL 889 (3167)</label>
+                        <input type="text" id="rebaja-zona" class="form-control" placeholder="">
+                      </div>
+
+                      <!-- Sexta Fila -->
+                      <div class="col-12 col-md-6">
+                        <label for="cuota-sindical-1" class="form-label fw-bold d-block">Cuota sindical 1 (3171)</label>
+                        <input type="text" id="cuota-sindical-1" class="form-control" placeholder="">
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <label for="cuota-sindical-2" class="form-label fw-bold d-block">Cuota sindical 2 (3172)</label>
+                        <input type="text" id="cuota-sindical-2" class="form-control" placeholder="">
+                      </div>
+
+                      <div class="col-12 col-md-6">
+                        <label for="cuota-sindical-3" class="form-label fw-bold d-block">Cuota sindical 3 (3173)</label>
+                        <input type="text" id="cuota-sindical-3" class="form-control" placeholder="">
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <label for="cuota-sindical-4" class="form-label fw-bold d-block">Cuota sindical 4 (3174)</label>
+                        <input type="text" id="cuota-sindical-4" class="form-control" placeholder="">
+                      </div>
+
+                      <div class="col-12 col-md-6">
+                        <label for="cuota-sindical-5" class="form-label fw-bold d-block">Cuota sindical 5 (3175)</label>
+                        <input type="text" id="cuota-sindical-5" class="form-control" placeholder="">
+                      </div>
+
+                      <div class="col-12 col-md-6">
+                          <label for="cuota-sindical-6" class="form-label fw-bold d-block">Cuota sindical 6 (3176)</label>
+                          <input type="text" id="cuota-sindical-6" class="form-control" placeholder="">
+                      </div>
+
+                      <div class="col-12 col-md-6">
+                        <label for="cuota-sindical-7" class="form-label fw-bold d-block">Cuota sindical 7 (3177)</label>
+                        <input type="text" id="cuota-sindical-7" class="form-control" placeholder="">
+                    
+                      <div class="col-12 col-md-6">
+                        <label for="cuota-sindical-8" class="form-label fw-bold d-block">Cuota sindical 8 (3178)</label>
+                        <input type="text" id="cuota-sindical-8" class="form-control" placeholder="">
+                      </div>
+
+                      <div class="col-12 col-md-6">
+                        <label for="cuota-sindical-9" class="form-label fw-bold d-block">Cuota sindical 9 (3179)</label>
+                        <input type="text" id="cuota-sindical-9" class="form-control" placeholder="">
+                      </div>
+
+                      <div class="col-12 col-md-6">
+                        <label for="cuota-sindical-10" class="form-label fw-bold d-block">Cuota sindical 10 (3180)</label>
+                        <input type="text" id="cuota-sindical-10" class="form-control" placeholder="">
+                      </div>
+
+                      <div class="col-12 col-md-6">
+                        <label for="credito-ccaf" class="form-label fw-bold d-block">Crédito social CCAF (3110)</label>
+                        <input type="text" id="credito-ccaf" class="form-control" placeholder="">
+                      </div>
+
+                      <div class="col-12 col-md-6">
+                        <label for="cuota-vivienda" class="form-label fw-bold d-block">Cuota vivienda o educación (Art. 58) (3181)</label>
+                        <input type="text" id="cuota-vivienda" class="form-control" placeholder="">
+                      </div>
+
+                      <div class="col-12">
+                        <label for="credito-cooperativas" class="form-label fw-bold d-block">Crédito cooperativas de ahorro (Art 54. Ley Coop.) (3182)</label>
+                        <input type="text" id="credito-cooperativas" class="form-control" placeholder="">
+                      </div>
+
+                    </form>
+                  </div>
+
+
+                </div>
+
+                <hr class="my-4">
+                <!-- Cálculo de Otros Descuentos Autorizados y Solicitados -->
+                <div>
+                  <!-- Título -->
+                  <h4 class="fw-bold mt-5">Cálculo de Otros descuentos autorizados y solicitados por el trabajador (3183)</h4>
+                  <p>Ingrese a continuación el valor de cualquier otro descuento solicitado por el trabajador:</p>
+
+                  <!-- Formulario -->
+                  <form class="row g-4 mt-3">
+                    <div class="col-12">
+                      <label for="otros-descuentos" class="form-label fw-bold d-block">Otros descuentos solicitados</label>
+                      <input type="text" id="otros-descuentos" class="form-control" placeholder="Ingrese el valor">
+                    </div>
+                  </form>
+
+                  <!-- Resultado del cálculo -->
+                  <div class="alert-success px-4 py-3 mt-4 row">
+                    <p class="fw-bold text-success-900 pb-3 ps-0">
+                      <i class="fa fa-arrow-right me-2 text-success-500"></i>Valor total sumando excedentes de otros campos
+                    </p>
+                    <p class="text-gray-900 pb-2 ps-0">Otros descuentos autorizados y solicitados por el trabajador (3183)</p>
+                    <input type="text" id="valor-total-descuentos" class="form-control mt-2" placeholder="00000" disabled>
+                  </div>
+                </div>
+
+
+
+                <hr class="my-4">
+                <!-- Donaciones y Otros Descuentos -->
+                <div>
+                  <!-- Formulario -->
+                  <form class="row g-4 mt-3">
+                    <!-- Primera Fila -->
+                    <div class="col-12 col-md-6">
+                      <label for="donaciones-culturales" class="form-label fw-bold d-block">Donaciones culturales y de reconstrucción (3184)</label>
+                      <input type="text" id="donaciones-culturales" class="form-control" placeholder="Ingrese el valor">
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label for="otros-descuentos-art-58" class="form-label fw-bold d-block">Otros descuentos (Art. 58) (3185)</label>
+                        <input type="text" id="otros-descuentos-art-58" class="form-control" placeholder="Ingrese el valor">
+                    </div>
+
+                    <!-- Segunda Fila -->
+                    <div class="col-12 col-md-6">
+                      <label for="pensiones-alimentos" class="form-label fw-bold d-block">Pensiones de alimentos (3186)</label>
+                      <input type="text" id="pensiones-alimentos" class="form-control" placeholder="Ingrese el valor">
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <label for="descuento-mujer-casada" class="form-label fw-bold d-block">Descuento mujer casada (Art. 59) (3187)</label>
+                      <input type="text" id="descuento-mujer-casada" class="form-control" placeholder="Ingrese el valor">
+                    </div>
+
+                    <!-- Tercera Fila -->
+                    <div class="col-12">
+                      <label for="descuentos-anticipos" class="form-label fw-bold d-block">Descuentos por anticipos y préstamos (3188)</label>
+                      <input type="text" id="descuentos-anticipos" class="form-control" placeholder="Ingrese el valor">
+                    </div>
+                  </form>
+                </div>
+
+                <!-- Botones -->
+                <div class="d-flex flex-column flex-md-row gap-3 mt-5 mb-5">
+                  <button type="button" class="btn btn-primary-secondary">
+                      <i class="fa-solid fa-chevron-left"></i> Anterior
+                  </button>
+                  <button type="button" class="btn btn-primary-secondary">
+                      Siguiente <i class="fa-solid fa-chevron-right"></i>
+                  </button>
+                  <button type="submit" class="btn btn-warning-primary">Terminar liquidación</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    
+      <style>
+        .num-liqui {
+          .nav-pills {
+            position: relative;
+          }
+    
+          .btn-circle {
+            position: relative;
+            width: 49px;
+            height: 49px;
+            margin-bottom: 58px;
+            background-color: none;
+            border: 1px solid #654209;
+            border-radius: 50% !important;
+            color: #654209;
+            display: flex; /* Para usar flexbox */
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente */
+            text-align: center; /* Para asegurarte de que el texto esté alineado */
+            font-size: 20px; /* Ajusta el tamaño de fuente si es necesario */
+            font-weight: bold;
+          }
+    
+          .btn-circle::after {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 50px; 
+            background-color: #654209;
+            top: 51px; 
+            left: 50%; 
+            transform: translateX(-50%);
+          }
+    
+          .btn-circle:last-of-type::after {
+            display: none; 
+          }
+    
+          .btn-circle.active {
+            color: #654209 !important;
+            background-color: #FFC107 !important;
+          }
+    
+          .btn-circle:hover {
+            color: #654209;
+          }
+
+          .btn-circle.active::after {
+            background-color: #FFC107; 
+          }
+
+          .btn-circle.visited {
+            background-color: #ffeb99; 
+            color: #654209;
+            border-color: #ffeb99;
+          }
+        }
+        
+      </style>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const buttons = document.querySelectorAll(".num-liqui button");
+
+          buttons.forEach((button) => {
+            button.addEventListener("click", () => {
+              // Desactiva el estado activo de todos los botones
+              buttons.forEach((btn) => btn.classList.remove("active"));
+
+              // Marca el botón actual como "visitado"
+              button.classList.add("visited");
+              button.classList.remove("active"); // Quita el estado activo del botón clicado
+
+              // Activa el botón actual
+              button.classList.add("active");
+
+              // Asegúrate de que el botón 1 también tenga la clase "visited" si es diferente al clicado
+              const firstButton = document.querySelector(".num-liqui button:first-child");
+              if (firstButton && firstButton !== button) {
+                firstButton.classList.add("visited");
+                firstButton.classList.remove("active");
+              }
+            });
+          });
+        });
+
+
+
+      </script>
+
+    </body>
+    
+  </html>

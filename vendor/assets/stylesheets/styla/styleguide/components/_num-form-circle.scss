@@ -1,0 +1,59 @@
+.num-form {
+
+.nav-link { 
+    margin-bottom: 31px;
+    display: block;
+    padding: 2px 6px;
+    font-size: 24px;
+    font-weight: bold;
+    color: map-get($primary, 800);
+    text-decoration: none;
+    background: 0 0;
+    border: 1px solid map-get($primary, 800);
+    border-radius: 25px !important;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: map-get($primary, 900);
+    border: 1px solid map-get($primary, 500);
+    background-color: map-get($primary, 500);
+}
+
+
+
+
+/* Añadimos un pseudo-elemento a cada botón de la navegación */
+.nav-pills .nav-link::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 2px; /* Ancho de la línea */
+    height: 31px; /* Altura de la línea entre los botones */
+    border-left: 1px dashed map-get($primary, 800); /* Línea punteada */
+    top: 100%; /* Posicionar justo después del botón */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-pills .nav-link.active::after {
+    border-left: 2px solid map-get($primary, 500); /* Línea sólida y de color amarillo para el botón activo */
+}
+
+
+/* Removemos la línea del último botón */
+.nav-pills .nav-link:last-child::after {
+    display: none;
+}
+
+/* Ajuste de los botones */
+.nav-pills .nav-link {
+    position: relative;
+    margin-bottom: 30px; /* Espacio entre los botones */
+}
+.nav-link:hover {
+    border: 1px solid map-get($primary, 500);
+    color: map-get($primary, 500);
+}
+
+}

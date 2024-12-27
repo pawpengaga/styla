@@ -1,0 +1,29 @@
+.popover-black {
+  .popover-body{
+    background-color: map-get($grayscale, 900);
+    font-size: map-get(map-get($font-sizes, sm), size);
+    border-radius: 3px;
+    color: map-get($grayscale, 100);
+  }
+  .popover-arrow{
+    &::before{
+      border-right-color: map-get($grayscale, 900);
+    }
+  }
+}
+
+// .popover-black .popover-arrow::before {
+//    /* Color de la flecha del popover */
+// }
+
+.bs-popover-start > .popover-arrow::after, .bs-popover-auto[data-popper-placement^="left"] > .popover-arrow::after {
+  // right: 1px;
+  border-width: 0.5em 0 0.5em 0.5em;
+  border-left-color: map-get($grayscale, 900);
+}
+
+.bs-popover-end > .popover-arrow::after, .bs-popover-auto[data-popper-placement^="right"] > .popover-arrow::after {
+  left: 1px;
+  border-width: 0.5em 0.5em 0.5em 0;
+  border-right-color: map-get($grayscale, 900);
+}

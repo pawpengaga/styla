@@ -1,0 +1,19 @@
+@include fw-generator($font-weights);
+@include fs-generator($font-sizes, 'class');
+@include fs-generator($semantic-tags, 'tag');
+
+body{
+  font-family: $main-type;
+  font-weight: map-get($map: $font-weights, $key: regular);
+}
+
+
+p{
+  margin-bottom: 0;
+}
+
+.text-upper{
+  text-transform: uppercase;
+}
+
+//Faltan: Los labels y asociados a incluir a futuro

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empleadores Index</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+    <!--Navbar que se debe programar para ser utilizada cuando se solicite-->
+    <div class="navbar-custom">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+          <!-- Sección de información de la empresa -->
+            <div class="info-empresa d-flex align-items-center me-0"> <!-- Cambia margin-right a me-4 -->
+                <div class="logo-circle bg-dark text-white d-flex align-items-center justify-content-center">
+                Te
+                </div>
+                <div class="ms-2">
+                    <div class="d-flex align-items-center prim-lin">
+                        <h6 class="mb-0 fw-bold">EMPRESA LTDA</h6>
+                        <p class="mb-0 mx-2">• 12.564.775-k</p>
+                    </div>
+                    <div class="d-flex align-items-center seg-lin">
+                        <p class="mb-0">999+ empleados</p>
+                        <i class="fas fa-eye ms-1 text-secondary" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="vr"></div>
+                <!-- Botones -->
+                <div class="botones d-flex justify-content-start"> <!-- Cambia ms-3 a ms-2 -->
+                    <button class="btn btn-primary-secondary">
+                    <i class="fas fa-lock me-1" aria-hidden="true"></i> Cambiar contraseña
+                    </button>
+                    <button class="btn btn-primary-primary">
+                    <i class="fas fa-user me-1" aria-hidden="true"></i> Cambiar usuario
+                    </button>
+                </div>
+            </div>
+      
+
+      
+          <!-- Menú de usuario -->
+           
+            <div class="dropdown d-flex">
+                <div class="logo-circle bg-dark text-white d-flex align-items-center justify-content-center">Te</div>
+                <div class="dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false"></div>
+                <ul class="dropdown-menu dropdown-menu-end window-shadow-md border-none" aria-labelledby="dropdownUser">
+                    <li><strong class="dropdown-item fw-bold">EMPRESA LTDA.</strong></li>
+                    <li class=""><a class="dropdown-item text-primary-500" href="#">proyecto Premium</a></li>
+                    <hr class="lin-bar">
+                    <li><a class="dropdown-item" href="#"> Editar perfil  <i class="fas fa-external-link m-2"></i></a></li>
+                    <li><a class="dropdown-item" href="#"> Cerrar sesión  <i class="fas fa-sign-out-alt m-2"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--TERMINO NAVBAR-->
+
+    <!--VISUALIZACION DE CONTENIDO-->
+    
+    <div class="full-signup">
+        <div class="container w-75">
+            <div class="breadcrumb-section py-4">
+                <!-- Elementos a ser iterados una y otra vez -->
+                <span><a href="#" class="breadcrumb-link">Dashboard</a></span>
+                <span>/</span>
+                <!-- Elemento final del array de paginas -->
+                <span><a href="#" class="breadcrumb-link-current">Nombre empresa</a></span>
+            </div>
+    
+            <div class="bg-white rounded border mb-4 position-relative">
+                <div class="position-absolute top-0 end-0 p-1">
+                    <div class="dropend">
+                        <button type="button" class="btn btn-link text-gray-500" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <a class="dropdown-item" href="#"><i class="fa fa-pencil" aria-hidden="true"></i> Editar empresa</a>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="container my-3 px-5 py-0">
+                    <div class="row align-items-center">
+                        <div class="col-1">
+                            <div class="pfp-company">te</div>
+                        </div>
+                        <div class="col-8 ">
+                            <div class="mb-1">
+                                <h2 class="fw-bold mb-0">EMPRESA LTDA</h2>
+                                <p class="text-gray-500 mt-0">12.564.775-k</p>   
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-4">
+                                    <p class="text-gray-500 mt-0"><i class="fa fa-address-card" aria-hidden="true"></i><span class="ms-1">ejemplo@mail.com</span></p>
+                                </div>
+                                <div class="col-4">
+                                    <p class="text-gray-500 mt-0"><i class="fa fa-envelope" aria-hidden="true"></i><span class="ms-1">ejemplo@mail.com</span></p>
+                                </div>
+                                <div class="col-4">
+                                    <p class="text-gray-500 mt-0"><i class="fa fa-phone" aria-hidden="true"></i><span class="ms-1">teléfono</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-1">
+                            <div class="d-flex" style="height: 128px;">
+                                <div class="vr"></div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div>
+                                <img src="/vendor/assets/stylesheets/styla/icons/Vector.svg" alt="">
+                            </div>
+                            <div>
+                                <p class="text-primary-700 fw-bold mt-3">234 Empleador <i class="fa fa-eye" aria-hidden="true"></i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+            <div class="bg-white rounded border mb-4 ">
+                <div class="container my-3 px-5 pt-3">
+                    <h4 class="fw-bold">Datos del contacto </h4>
+                </div>
+                
+                <div class="container my-3  px-5 py-0 ps-0">
+                    <div class="row my-5 pe-6">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col ps-1"><h6 class="fw-bold text-end">Region</h6></div>
+                                <div class="col"><p class="fs-sm fs-sm text-gray-500 text-start">Arica y parinocota</p></div>   
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col"><h6 class="fw-bold text-end">Comuna</h6></div>
+                                <div class="col"><p class="fs-sm text-gray-500 text-start">Arica</p></div>   
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col "><h6 class="fw-bold text-end">Calle</h6></div>
+                                <div class="col "><p class="fs-sm text-gray-500 text-start">Linderos</p></div>   
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col "><h6 class="fw-bold text-end">Numero</h6></div>
+                                <div class="col "><p class="fs-sm text-gray-500 text-start">1434</p></div>   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded border mb-4">
+                <div class="container my-3 px-5 pt-3">
+                    
+                    <h4 class="fw-bold">Actividades económicas</h4>
+                                    <!-- Lista de actividades económicas ya seleccionadas -->
+                    <!-- Lista de actividades económicas ya seleccionadas -->
+                    <div class="list-group mb-4">
+                        <div class="list-group-item d-flex justify-content-between align-items-center p-3">
+                            <span>COD: 62525  <strong>Barracas de fierro</strong></span>
+                            <i class="fas fa-check-circle text-success"></i>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center p-3">
+                            <span>COD: 62529  <strong>Casas de música, instrumentos musicales, discos, radios, televisores, etc.</strong></span>
+                            <i class="fas fa-check-circle text-success"></i>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center p-3">
+                            <span>COD: 71112  <strong>Construcción y reparación del material rodante y mantenimiento de infraestructura</strong></span>
+                            <i class="fas fa-check-circle text-success"></i>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center p-3">
+                            <span> COD: 71312  <strong>Servicios relacionados</strong></span>
+                            <i class="fas fa-check-circle text-success"></i>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary-secondary"><i class="far fa-check-circle"></i>Editar actividades</button>
+
+
+
+
+                    
+                </div>
+            </div>
+            <div class="bg-white rounded border mb-4">
+                <div class="container my-3 px-5 pt-3">
+                    <h4 class="fw-bold">Contadores asociados</h4>
+                    <div class=" d-flex flex-row my-3  px-5 py-0 ps-0">
+                        <div class="pe-3">
+                            <button class="btn btn-primary-primary"><i class="fas fa-plus-circle"></i>Nuevo contador</button>
+                        </div>
+                        <div>
+                            <button class="btn btn-danger-secondary"><i class="fa-solid fa-link-slash"></i>Desvincular contadores</button>
+                        </div>
+                    </div>
+                
+                    <div class="container list-group">
+                        <!---Item de relleno de contadores -->
+                        <div class="list-group-item d-flex flex-row  justify-content-between align-items-center">
+                            <div class="form-check pe-2">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                <label class="form-check-label" for="flexCheckChecked"></label>
+                            </div>
+                            <div class="pe-3">
+                                <div class="pfp-user my-auto">Te</div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="fw-bold mb-0">Nombre del contador</h6>
+                                <p class="text-gray-500 mt-0">Rut del contador</p>
+                            </div>
+                            <div>
+                                <span>
+                                    <p class="fs-sm text-danger">Desvincular contador <i class="fa-solid fa-link-slash"></i></p>
+                                </span>
+                            </div>
+                        </div>
+                        <!--Termino de Item de relleno-->
+                        <!---Item de relleno de contadores -->
+                        <div class="list-group-item d-flex flex-row  justify-content-between align-items-center">
+                            <div class="form-check pe-2">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                <label class="form-check-label" for="flexCheckChecked"></label>
+                            </div>
+                            <div class="pe-3">
+                                <div class="pfp-user my-auto">Te</div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="fw-bold mb-0">Nombre del contador</h6>
+                                <p class="text-gray-500 mt-0">Rut del contador</p>
+                            </div>
+                            <div>
+                                <span>
+                                    <p class="fs-sm text-danger">Desvincular contador <i class="fa-solid fa-link-slash"></i></p>
+                                </span>
+                            </div>
+                        </div>
+                        <!--Termino de Item de relleno-->
+                        <!---Item de relleno de contadores -->
+                        <div class="list-group-item d-flex flex-row  justify-content-between align-items-center">
+                            <div class="form-check pe-2">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                <label class="form-check-label" for="flexCheckChecked"></label>
+                            </div>
+                            <div class="pe-3">
+                                <div class="pfp-user my-auto">Te</div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="fw-bold mb-0">Nombre del contador</h6>
+                                <p class="text-gray-500 mt-0">Rut del contador</p>
+                            </div>
+                            <div>
+                                <span>
+                                    <p class="fs-sm text-danger">Desvincular contador <i class="fa-solid fa-link-slash"></i></p>
+                                </span>
+                            </div>
+                        </div>
+                        <!--Termino de Item de relleno-->
+                        <!---Item de relleno de contadores -->
+                        <div class="list-group-item d-flex flex-row  justify-content-between align-items-center">
+                            <div class="form-check pe-2">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                <label class="form-check-label" for="flexCheckChecked"></label>
+                            </div>
+                            <div class="pe-3">
+                                <div class="pfp-user my-auto">Te</div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="fw-bold mb-0">Nombre del contador</h6>
+                                <p class="text-gray-500 mt-0">Rut del contador</p>
+                            </div>
+                            <div>
+                                <span>
+                                    <p class="fs-sm text-danger">Desvincular contador <i class="fa-solid fa-link-slash"></i></p>
+                                </span>
+                            </div>
+                        </div>
+                        <!--Termino de Item de relleno-->
+                        <!---Item de relleno de contadores -->
+                        <div class="list-group-item d-flex flex-row  justify-content-between align-items-center">
+                            <div class="form-check pe-2">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                <label class="form-check-label" for="flexCheckChecked"></label>
+                            </div>
+                            <div class="pe-3">
+                                <div class="pfp-user my-auto">Te</div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="fw-bold mb-0">Nombre del contador</h6>
+                                <p class="text-gray-500 mt-0">Rut del contador</p>
+                            </div>
+                            <div>
+                                <span>
+                                    <p class="fs-sm text-danger">Desvincular contador <i class="fa-solid fa-link-slash"></i></p>
+                                </span>
+                            </div>
+                        </div>
+                        <!--Termino de Item de relleno-->
+
+                        
+
+                    </div>
+                    
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex" style="height: 100px;">
+        
+    </div>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    
+</body>
+
+</html>

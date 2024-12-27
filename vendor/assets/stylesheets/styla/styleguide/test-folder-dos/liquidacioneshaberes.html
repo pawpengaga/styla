@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title> Haberes</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" href="../../style.css">
+
+    </head>
+  
+    <body style="background-color: grey;">
+
+        <h1>Haberes</h1> <br><br>
+
+        <div class="tab-content border container mt-4 pe-0" id="myTabContent"> <!---Esto no se pega en el proyecto-->
+          <div class="d-flex align-items-start num-liqui">
+              <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                  <button class="nav-link active btn-circle" id="v-pills-1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-1" type="button" role="tab" aria-controls="v-pills-1" aria-selected="true">2.1</button>
+                  <button class="nav-link btn-circle" id="v-pills-2-tab" data-bs-toggle="pill" data-bs-target="#v-pills-2" type="button" role="tab" aria-controls="v-pills-2" aria-selected="false">2.2</button>
+                  <button class="nav-link btn-circle" id="v-pills-3-tab" data-bs-toggle="pill" data-bs-target="#v-pills-3" type="button" role="tab" aria-controls="v-pills-3" aria-selected="false">2.3</button>
+                  <button class="nav-link btn-circle" id="v-pills-4-tab" data-bs-toggle="pill" data-bs-target="#v-pills-4" type="button" role="tab" aria-controls="v-pills-4" aria-selected="false">2.4</button>
+                </div>
+              <div class="border window-white container">
+                <div class="tab-content m-4" id="v-pills-tabContent">
+                  <!-- Alerta -->
+                  <div class="d-none alert-danger d-flex justify-content-between align-items-center px-4 py-3 ">
+                      <div>
+                      <i class="fa-solid fa-circle-xmark me-2"></i>
+                      <span><strong>Los indicadores previsionales</strong> aún no están disponibles para este mes</span>
+                      </div>
+                      <i class="fa-solid fa-xmark"></i>
+                  </div>
+                  <!--Fin Alerta-->  
+
+                  <!--2.1 Haberes -->
+                  <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab" tabindex="0">
+                    
+                    <div>
+                      <!-- Encabezado -->
+                      <h4 class="fw-bold mt-4">Haberes imponibles y tributables</h4>
+                  
+                      <!-- Formulario -->
+                      <form class="row g-4 mt-3">
+                        <!-- Primera fila: Sueldo y Sobresueldo -->
+                        <div class="col-12 col-md-6">
+                            <label for="sueldo" class="form-label fw-bold fs-base d-block">Sueldo (2101)
+                                <span class="badge-danger ms-2">OBLIGATORIO</span>
+                            </label>
+                            <input type="text" id="sueldo" class="form-control" placeholder="Ingrese el sueldo">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="sobresueldo" class="form-label fw-bold fs-base d-block">Sobresueldo (2102)</label>
+                            <input type="text" id="sobresueldo" class="form-control" placeholder="Ingrese el sobresueldo">
+                        </div>
+                
+                        <!-- Segunda fila: Comisiones y Semana corrida mensual -->
+                        <div class="col-12 col-md-6">
+                            <label for="comisiones" class="form-label fw-bold fs-base d-block">Comisiones (Mensual) (2103)</label>
+                            <input type="text" id="comisiones" class="form-control" placeholder="Ingrese las comisiones">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="semana-corrida" class="form-label fw-bold fs-base d-block">Semana corrida mensual (Art. 45) (2104)</label>
+                            <input type="text" id="semana-corrida" class="form-control" placeholder="Valor calculado" disabled>
+                        </div>
+                      </form>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <div>
+                      <!-- Subtítulo -->
+                      <h5 class="fs-lg fw-bold fs-base mt-4">Cálculo de Participación (mensual) (2105)</h5>
+                      <p>Le pedimos el ingreso de los siguientes valores para realizar el cálculo:</p>
+                  
+                      <!-- Formulario -->
+                      <form class="row g-3 mt-3">
+                        <!-- Primera fila: Valor de la cuota y Número de meses -->
+                        <div class="col-12 col-md-6">
+                          <label for="cuota-desvengada" class="form-label fw-bold fs-base d-block">Valor de la cuota desvengada</label>
+                          <input type="text" id="cuota-desvengada" class="form-control" placeholder="">
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <label for="meses-pago" class="form-label fw-bold fs-base d-block">N° de meses por los que se paga</label>
+                          <input type="text" id="meses-pago" class="form-control" placeholder="Ingrese el número de meses">
+                        </div>
+                      </form>
+                  
+                      <!-- Resultado del cálculo -->
+                      <div class="alert-success px-4 py-3 mt-4 row">
+                        <p class="fw-bold fs-base text-success-900 pb-3 ps-0"> <i class="fa fa-arrow-right me-2 text-success-500"></i>Valor total del cálculo</p> <br>
+                        <p class="fw-bold fs-base text-gray-900 pb-2 ps-0"> Participación (mensual) (2105)</p> <br>
+                        <input type="text" id="valor-total-calculo" class="form-control mt-2" placeholder="00000" disabled>
+                      </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <!-- Gratificación mensual y Recargo día domingo -->
+                    <form class="row g-4 mt-3">
+                      <div class="col-12 col-md-6">
+                        <label for="gratificacion-mensual" class="form-label fw-bold fs-base d-block">Gratificación (mensual) (2106)</label>
+                        <input type="text" id="gratificacion-mensual" class="form-control" placeholder="Ingrese la gratificación">
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <label for="recargo-domingo" class="form-label fw-bold fs-base d-block">Recargo 30% día domingo (Art. 38) (2107)</label>
+                        <input type="text" id="recargo-domingo" class="form-control" placeholder="Ingrese el recargo">
+                      </div>
+                    </form>
+
+                    <hr class="my-4">
+
+                    <!-- Cálculo de Remuneración Variable (Art. 71) (2108) -->
+                    <div>
+                      <!-- Subtítulo -->
+                      <h5 class="fs-lg fw-bold fs-base mt-5">Cálculo de Remuneración variable pagada en vacaciones (Art. 71) (2108)</h5>
+                      <p>Le pedimos el ingreso de los siguientes valores para realizar el cálculo:</p>
+
+                      <!-- Formulario -->
+                      <form class="row g-4 mt-3">
+                        <!-- Primera fila: Cantidad de meses -->
+                        <div class="col-12">
+                            <label for="cantidad-meses" class="form-label fw-bold fs-base d-block mb-3">Cantidad de meses</label>
+                            <select id="cantidad-meses" class="form-select">
+                                <option selected>Seleccione una opción</option>
+                                <option value="1">1 mes</option>
+                                <option value="2">2 meses</option>
+                                <option value="3">3 meses</option>
+                                <option value="4">4 meses</option>
+                            </select>
+                        </div>
+
+                        <!-- Segunda fila: Sueldo total haberes imponibles y tributables -->
+                        <div class="col-12">
+                            <label class="form-label fw-bold fs-base d-block">Sueldo total haberes imponibles y tributables (5210)</label>
+                        </div>
+                        <div class="row row-cols-1 row-cols-md-3 g-3">
+                          <!-- Meses Anteriores -->
+                          <div class="col">
+                            <label class="fw-bold fs-base" for="mes1">Mes anterior N°1</label>
+                            <input type="text" class="form-control" >
+                          </div>
+                          <div class="col">
+                            <label class="fw-bold fs-base" for="mes1">Mes anterior N°2</label>
+                            <input type="text" class="form-control" >                          </div>
+                          <div class="col">
+                            <label class="fw-bold fs-base" for="mes1">Mes anterior N°3</label>
+                            <input type="text" class="form-control" >                          </div>
+                          <div class="col">
+                            <label class="fw-bold fs-base" for="mes1">Mes anterior N°4</label>
+                            <input type="text" class="form-control" >                          </div>
+                          <div class="col">
+                            <label class="fw-bold fs-base" for="mes1">Mes anterior N°5</label>
+                            <input type="text" class="form-control" >                          </div>
+                          <div class="col">
+                            <label class="fw-bold fs-base" for="mes1">Mes anterior N°6</label>
+                            <input type="text" class="form-control" >                          </div>
+                          <div class="col">
+                            <label class="fw-bold fs-base" for="mes1">Mes anterior N°7</label>
+                            <input type="text" class="form-control" >                          </div>
+                          <div class="col">
+                            <label class="fw-bold fs-base" for="mes1">Mes anterior N°8</label>
+                            <input type="text" class="form-control" >                          </div>
+                          <div class="col">
+                            <label class="fw-bold fs-base" for="mes1">Mes anterior N°9</label>
+                            <input type="text" class="form-control" >                          </div>
+                          <div class="col">
+                            <label class="fw-bold fs-base" for="mes1">Mes anterior N°10</label>
+                            <input type="text" class="form-control" >                          </div>
+                          <div class="col">
+                            <label class="fw-bold fs-base" for="mes1">Mes anterior N°11</label>
+                            <input type="text" class="form-control" >                          </div>
+                          <div class="col">
+                            <label class="fw-bold fs-base" for="mes1">Mes anterior N°12</label>
+                            <input type="text" class="form-control" >                          </div>
+                        </div>
+                      </form>
+
+                      <!-- Resultado del cálculo -->
+                      <div class="alert-success px-4 py-3 mt-4 row">
+                          <p class="fw-bold fs-base text-success-900 pb-3 ps-0">
+                              <i class="fa fa-arrow-right me-2 text-success-500"></i>Valor total del cálculo
+                          </p>
+                          <p class="fw-bold fs-base text-gray-900 pb-2 ps-0">Remuneración variable pagada en vacaciones (Art. 71) (2108)</p>
+                          <input type="text" id="valor-total-remuneracion" class="form-control mt-2" placeholder="00000" disabled>
+                      </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <!-- Entradas de Remuneración Variable -->
+                    <form class="row g-4 mt-5">
+                      <!-- Remuneración variable pagada en clausura (Art. 38 DFL 2) (2109) -->
+                      <div class="col-12 col-md-6">
+                        <label for="remuneracion-clausura" class="form-label fw-bold fs-base d-block">Remuneración variable pagada en clausura (Art. 38 DFL 2) (2109)</label>
+                        <input type="text" id="remuneracion-clausura" class="form-control" placeholder="">
+                      </div>
+
+                      <!-- Aguinaldo (2110) -->
+                      <div class="col-12 col-md-6">
+                        <label for="aguinaldo" class="form-label fw-bold fs-base d-block">Aguinaldo (2110)</label>
+                        <input type="text" id="aguinaldo" class="form-control" placeholder="">
+                      </div>
+
+                      <!-- Bonos u otras remuneraciones fijas mensuales (2111) -->
+                      <div class="col-12 col-md-6">
+                        <label for="bonos-remuneraciones" class="form-label fw-bold fs-base d-block">Bonos u otras remuneraciones fijas mensuales (2111)</label>
+                        <input type="text" id="bonos-remuneraciones" class="form-control" placeholder="">
+                      </div>
+
+                      <!-- Tratos (mensual) (2112) -->
+                      <div class="col-12 col-md-6">
+                        <label for="tratos-mensuales" class="form-label fw-bold fs-base d-block">Tratos (mensual) (2112)</label>
+                        <input type="text" id="tratos-mensuales" class="form-control" placeholder="">
+                      </div>
+                    </form>
+
+                    <hr class="my-4">
+
+                    <!-- Cálculo de Remuneración Variable Pagada en Vacaciones (Art. 71) (2108) -->
+                    <div>
+                      <!-- Subtítulo -->
+                      <h5 class="fs-lg fw-bold fs-base mt-5">Cálculo de Remuneración variable pagada en vacaciones (Art. 71) (2108)</h5>
+                      <p>Le pedimos el ingreso de los siguientes valores para realizar el cálculo:</p>
+
+                      <!-- Formulario -->
+                      <form class="row g-4 mt-3">
+                        <!-- Valor cuota desvengada -->
+                        <div class="col-12 col-md-6">
+                          <label for="valor-cuota" class="form-label fw-bold fs-base d-block">Valor cuota desvengada</label>
+                          <input type="text" id="valor-cuota" class="form-control" placeholder="">
+                        </div>
+
+                        <!-- Número de meses por los que se desvenga -->
+                        <div class="col-12 col-md-6">
+                          <label for="meses-desvengados" class="form-label fw-bold fs-base d-block">N° de meses por los que se desvenga</label>
+                          <select id="meses-desvengados" class="form-select">
+                            <option selected>Seleccione una opción</option>
+                            <option value="1">1 mes</option>
+                            <option value="2">2 meses</option>
+                            <option value="3">3 meses</option>
+                            <option value="4">4 meses</option>
+                            <option value="5">5 mes</option>
+                            <option value="6">6 meses</option>
+                            <option value="7">7 meses</option>
+                            <option value="8">8 meses</option>              
+                            <option value="9">9 meses</option>
+                            <option value="10">10 mes</option>
+                            <option value="11">11 meses</option>
+                            <option value="12">12 meses</option>
+                          </select>
+                        </div>
+                      </form>
+
+                      <!-- Resultado del cálculo -->
+                      <div class="alert-success px-4 py-3 mt-4 row">
+                        <p class="fw-bold fs-base text-success-900 pb-3 ps-0">
+                          <i class="fa fa-arrow-right me-2 text-success-500"></i>Valor total del cálculo
+                        </p>
+                        <p class="fw-bold fs-base text-gray-900 pb-2 ps-0">Bonos u otras remuneraciones variables mensuales o superiores a un mes (2113)</p>
+                        <input type="text" id="valor-total-calculo-2113" class="form-control mt-2" placeholder="00000" disabled>
+                      </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    
+                    <!-- Campos de Remuneraciones Relacionadas -->
+                    <div>
+                      <form class="row g-4">
+                        <!-- Primera Fila -->
+                        <div class="col-12 col-md-6">
+                          <label for="opcion-no-pactada" class="form-label fw-bold fs-base d-block">Ejercicio opción no pactada en contrato (Art. 17 N°8 LIR) (2114)</label>
+                          <input type="text" id="opcion-no-pactada" class="form-control" placeholder="">
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <label for="beneficios-especie" class="form-label fw-bold fs-base d-block">Beneficios en especie constitutivos de remuneración (2115)</label>
+                          <input type="text" id="beneficios-especie" class="form-control" placeholder="">
+                        </div>
+
+                        <!-- Segunda Fila -->
+                        <div class="col-12 col-md-6">
+                          <label for="remuneraciones-bimestrales" class="form-label fw-bold fs-base d-block">Remuneraciones bimestrales (devengo en dos meses) (2116)</label>
+                          <input type="text" id="remuneraciones-bimestrales" class="form-control" placeholder="">
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <label for="remuneraciones-trimestrales" class="form-label fw-bold fs-base d-block">Remuneraciones trimestrales (devengo en tres meses) (2117)</label>
+                          <input type="text" id="remuneraciones-trimestrales" class="form-control" placeholder="">
+                        </div>
+
+                        <!-- Tercera Fila -->
+                        <div class="col-12 col-md-6">
+                          <label for="remuneraciones-cuatrimestrales" class="form-label fw-bold fs-base d-block">Remuneraciones cuatrimestrales (devengo en cuatro meses) (2118)</label>
+                          <input type="text" id="remuneraciones-cuatrimestrales" class="form-control" placeholder="">
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <label for="remuneraciones-semestrales" class="form-label fw-bold fs-base d-block">Remuneraciones semestrales (devengo en seis meses) (2119)</label>
+                          <input type="text" id="remuneraciones-semestrales" class="form-control" placeholder="">
+                        </div>
+
+                        <!-- Cuarta Fila -->
+                        <div class="col-12 col-md-6">
+                          <label for="remuneraciones-anuales" class="form-label fw-bold fs-base d-block">Remuneraciones anuales (devengo en doce meses) (2120)</label>
+                          <input type="text" id="remuneraciones-anuales" class="form-control" placeholder="">
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <label for="participacion-anual" class="form-label fw-bold fs-base d-block">Participación anual (devengo en doce meses) (2121)</label>
+                          <input type="text" id="participacion-anual" class="form-control" placeholder="">
+                        </div>
+
+                        <!-- Quinta Fila -->
+                        <div class="col-12">
+                          <label for="gratificacion-anual" class="form-label fw-bold fs-base d-block">Gratificación anual (devengo en doce meses) (2122)</label>
+                          <input type="text" id="gratificacion-anual" class="form-control" placeholder="">
+                        </div>
+                      </form>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <!-- Cálculo de Otras Remuneraciones Superiores a un Mes (2123) -->
+                    <div>
+                      <!-- Subtítulo -->
+                      <h5 class="fs-lg fw-bold fs-base mt-5">Cálculo de Otras remuneraciones superiores a un mes (2123)</h5>
+                      <p>Ingrese a continuación el valor de cualquier otra remuneración superior a un mes:</p>
+
+                      <!-- Formulario -->
+                      <form class="row g-4 mt-3">
+                        <!-- Campo: Otras remuneraciones superiores a un mes -->
+                        <div class="col-12">
+                            <label for="otras-remuneraciones" class="form-label fw-bold fs-base d-block">Otras remuneraciones superiores a un mes</label>
+                            <input type="text" id="otras-remuneraciones" class="form-control" placeholder="">
+                        </div>
+                      </form>
+
+                      <!-- Resultado del cálculo -->
+                      <div class="alert-success px-4 py-3 mt-4 row">
+                        <p class="fw-bold fs-base text-success-900 pb-3 ps-0">
+                            <i class="fa fa-arrow-right me-2 text-success-500"></i>Valor total sumando excedentes de otros campos
+                        </p>
+                        <p class="fw-bold fs-base text-gray-900 pb-2 ps-0">Otras remuneraciones superiores a un mes (2123)</p>
+                        <input type="text" id="valor-total-remuneraciones" class="form-control mt-2" placeholder="00000" disabled>
+                      </div>
+
+                      <hr class="my-4">
+
+                      <!-- Campos Finales -->
+                      <form class="row g-4">
+                        <!-- Pago por horas de trabajo sindical (2124) -->
+                        <div class="col-12 col-md-6">
+                          <label for="trabajo-sindical" class="form-label fw-bold fs-base d-block">Pago por horas de trabajo sindical (2124)</label>
+                          <input type="text" id="trabajo-sindical" class="form-control" placeholder="">
+                        </div>
+
+                        <!-- Sueldo empresarial (2161) -->
+                        <div class="col-12 col-md-6">
+                          <label for="sueldo-empresarial" class="form-label fw-bold fs-base d-block">Sueldo empresarial (2161)</label>
+                          <input type="text" id="sueldo-empresarial" class="form-control" placeholder="">
+                        </div>
+                      </form>
+
+                      <!-- Botones Finales -->
+                      <div class="d-flex flex-column flex-md-row justify-content-start gap-3 mt-5">
+                        <button type="button" class="btn btn-primary-secondary">
+                          Siguiente <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                        <button type="submit" class="btn btn-warning-primary">Terminar liquidación</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!--2.1 FIN Primera parte del formulario -->
+
+
+                  <!--2.2 Haberes-->
+                  <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-2-tab" tabindex="0">
+                    <!-- Haberes Imponibles y No Tributables -->
+                  <div>
+                    <!-- Título -->
+                    <h4 class="fw-bold mt-5">Haberes imponibles y no tributables</h4>
+
+                    <!-- Formulario -->
+                    <form class="row g-4 mt-3">
+                      <!-- Subsidio por incapacidad laboral (2201) -->
+                      <div class="col-12">
+                        <label for="subsidio-incapacidad" class="form-label fw-bold d-block">Subsidio por incapacidad laboral por licencia médica - total mensual (2201)</label>
+                        <input type="text" id="subsidio-incapacidad" class="form-control" placeholder="">
+                      </div>
+
+                      <!-- Beca de estudio (2202) -->
+                      <div class="col-12">
+                        <label for="beca-estudio" class="form-label fw-bold d-block">Beca de estudio (Art. 17 N°18 LIR) (2202)</label>
+                        <input type="text" id="beca-estudio" class="form-control" placeholder="">
+                      </div>
+
+                      <!-- Gratificaciones de zona (2203) -->
+                      <div class="col-12">
+                        <label for="gratificaciones-zona" class="form-label fw-bold d-block">Gratificaciones de zona (Art. 17 N°27) (2203) 
+                          <span class="badge-danger ms-2">OBLIGATORIO</span>
+                        </label>
+                        <input type="text" id="gratificaciones-zona" class="form-control" placeholder="">
+                      </div>
+
+                      <!-- Otros ingresos no constitutivos de renta (2204) -->
+                      <div class="col-12">
+                        <label for="otros-ingresos" class="form-label fw-bold d-block">Otros ingresos no constitutivos de renta (Art. 17 N°29 LIR) (2204)</label>
+                        <input type="text" id="otros-ingresos" class="form-control" placeholder="">
+                      </div>
+                    </form>
+
+                    <!-- Botones -->
+                    <div class="d-flex flex-column flex-md-row  gap-3 mt-4">
+                        <button type="button" class="btn btn-primary-secondary">
+                            <i class="fa-solid fa-chevron-left"></i> Anterior
+                        </button>
+                        <button type="button" class="btn btn-primary-secondary">
+                            Siguiente <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                        <button type="submit" class="btn btn-warning-primary">Terminar liquidación</button>
+                    </div>
+                  </div>
+                  <!--2.2 FIN Haberes-->
+
+                  
+
+
+                  </div>
+                  <!---2.2 FIN -->
+
+                  <!--2.3 Haberes--->
+                  <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-3-tab" tabindex="0">
+                    <!-- Haberes No Imponibles y No Tributables -->
+                    <div>
+                      <!-- Título -->
+                      <h4 class=" fw-bold mt-5">Haberes no imponibles y no tributables</h4>
+
+                      <!-- Formulario -->
+                      <form class="row g-4 mt-3">
+                        <!-- Primera Fila -->
+                        <div class="col-12 col-md-6">
+                          <label for="colacion-mensual" class="form-label fw-bold d-block">Colación total mensual (Art. 41) (2301)</label>
+                          <input type="text" id="colacion-mensual" class="form-control" placeholder="">
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <label for="movilizacion-mensual" class="form-label fw-bold d-block">Movilización total mensual (Art. 41) (2302)</label>
+                          <input type="text" id="movilizacion-mensual" class="form-control" placeholder="">
+                        </div>
+
+                        <!-- Segunda Fila -->
+                        <div class="col-12 col-md-6">
+                          <label for="viaticos-mensual" class="form-label fw-bold d-block">Viáticos total mensual (Art. 41) (2303)</label>
+                          <input type="text" id="viaticos-mensual" class="form-control" placeholder="">
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <label for="perdida-caja" class="form-label fw-bold d-block">Asignación de pérdida de caja total mensual (Art. 41) (2304)</label>
+                          <input type="text" id="perdida-caja" class="form-control" placeholder="">
+                        </div>
+
+                        <!-- Tercera Fila -->
+                        <div class="col-12 col-md-6">
+                          <label for="desgaste-herramienta" class="form-label fw-bold d-block">Asignación de desgaste herramienta total mensual (Art. 41) (2305)</label>
+                          <input type="text" id="desgaste-herramienta" class="form-control" placeholder="">
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <label for="familiar-legal" class="form-label fw-bold d-block">Asignación familiar legal total mensual (Art. 41) (2311)</label>
+                          <input type="text" id="familiar-legal" class="form-control" placeholder="">
+                        </div>
+
+                        <!-- Cuarta Fila -->
+                        <div class="col-12 col-md-6">
+                          <label for="gastos-trabajo" class="form-label fw-bold d-block">Gastos por causa del trabajo (Art. 41) (2306)</label>
+                          <input type="text" id="gastos-trabajo" class="form-control" placeholder="">
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <label for="gastos-residencia" class="form-label fw-bold d-block">Gastos por cambio de residencia (Art. 53) (2307)</label>
+                          <input type="text" id="gastos-residencia" class="form-control" placeholder="">
+                        </div>
+
+                        <!-- Quinta Fila -->
+                        <div class="col-12 col-md-6">
+                          <label for="sala-cuna" class="form-label fw-bold d-block">Sala cuna (Art. 203) (2308)</label>
+                          <input type="text" id="sala-cuna" class="form-control" placeholder="">
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <label for="teletrabajo" class="form-label fw-bold d-block">Asignación trabajo a distancia o teletrabajo (2309)</label>
+                          <input type="text" id="teletrabajo" class="form-control" placeholder="">
+                        </div>
+
+                        <!-- Sexta Fila -->
+                        <div class="col-12 col-md-6">
+                          <label for="deposito-convenido" class="form-label fw-bold d-block">Depósito convenido hasta UF 900 (2347)</label>
+                          <input type="text" id="deposito-convenido" class="form-control" placeholder="">
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <label for="alojamiento" class="form-label fw-bold d-block">Alojamiento por razones de trabajo (Art. 17 N°14 LIR) (2310)</label>
+                          <input type="text" id="alojamiento" class="form-control" placeholder="">
+                        </div>
+
+                        <!-- Séptima Fila -->
+                        <div class="col-12">
+                          <label for="traslacion" class="form-label fw-bold d-block">Asignación de traslación (Art. 17 N°15 LIR) (2312)</label>
+                          <input type="text" id="traslacion" class="form-control" placeholder="">
+                        </div>
+                      </form>
+                    </div>
+                    <hr class="my-4">
+
+                    <!-- Cálculo de Indemnización por Feriado Legal (2313) -->
+                    <div>
+                      <!-- Subtítulo -->
+                      <h4 class="fw-bold mt-5">Cálculo de Indemnización por feriado legal (2313)</h4>
+                      <p>Le pedimos el ingreso de los siguientes valores para realizar el cálculo:</p>
+
+                      <!-- Formulario -->
+                      <form class="row g-4 mt-3">
+                        <!-- Nº de días feriados totales utilizados -->
+                        <div class="col-12 col-md-6">
+                          <label for="dias-feriados" class="form-label fw-bold d-block">N° de días feriados totales utilizados</label>
+                          <input type="text" id="dias-feriados" class="form-control" placeholder="Ingrese el valor">
+                        </div>
+
+                        <!-- Nº de días inhábiles -->
+                        <div class="col-12 col-md-6">
+                          <label for="dias-inhabiles" class="form-label fw-bold d-block">N° de días inhábiles</label>
+                          <input type="text" id="dias-inhabiles" class="form-control" placeholder="Ingrese el valor">
+                        </div>
+                      </form>
+
+                      <!-- Resultado del cálculo -->
+                      <div class="alert-success px-4 py-3 mt-4 row">
+                        <p class="fw-bold text-success-900 pb-3 ps-0">
+                          <i class="fa fa-arrow-right me-2 text-success-500"></i>Valor total del cálculo
+                        </p>
+                        <p class=" text-gray-900 pb-2 ps-0">Indemnización por feriado legal (2313)</p>
+                        <input type="text" id="valor-total-feriado-legal" class="form-control mt-2" placeholder="00000" disabled>
+                      </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <!-- Gratificación Mensual y Recargo del 30% -->
+                    <div>
+                      <!-- Formulario -->
+                      <form class="row g-4 mt-2">
+                          <!-- Primera fila -->
+                          <div class="col-12 col-md-6">
+                              <label for="gratificacion-mensual-1" class="form-label fw-bold d-block">Gratificación (mensual) (2106)</label>
+                              <input type="text" id="gratificacion-mensual-1" class="form-control" placeholder="Ingrese el valor">
+                          </div>
+                          <div class="col-12 col-md-6">
+                              <label for="recargo-domingo-1" class="form-label fw-bold d-block">Recargo 30% día domingo (Art. 38) (2107)</label>
+                              <input type="text" id="recargo-domingo-1" class="form-control" placeholder="Ingrese el valor">
+                          </div>
+
+                          <!-- Segunda fila -->
+                          <div class="col-12 col-md-6">
+                              <label for="gratificacion-mensual-2" class="form-label fw-bold d-block">Gratificación (mensual) (2106)</label>
+                              <input type="text" id="gratificacion-mensual-2" class="form-control" placeholder="Ingrese el valor">
+                          </div>
+                          <div class="col-12 col-md-6">
+                              <label for="recargo-domingo-2" class="form-label fw-bold d-block">Recargo 30% día domingo (Art. 38) (2107)</label>
+                              <input type="text" id="recargo-domingo-2" class="form-control" placeholder="Ingrese el valor">
+                          </div>
+                      </form>
+
+                      <!-- Botones -->
+                      <div class="d-flex flex-column flex-md-row gap-3 mt-4">
+                          <button type="button" class="btn btn-primary-secondary">
+                              <i class="fa-solid fa-chevron-left"></i> Anterior
+                          </button>
+                          <button type="button" class="btn btn-primary-secondary">
+                              Siguiente <i class="fa-solid fa-chevron-right"></i>
+                          </button>
+                          <button type="submit" class="btn btn-warning-primary">Terminar liquidación</button>
+                      </div>
+                    </div>
+
+
+
+
+
+                  </div>
+                  <!---2.3 FIN -->
+
+                  <!---2.3 haberes-->
+                  <div class="tab-pane fade" id="v-pills-4" role="tabpanel" aria-labelledby="v-pills-4-tab" tabindex="0">
+                    <!-- Haberes No Imponibles y Tributables -->
+                    <div>
+                      <!-- Título -->
+                      <h4 class="fw-bold mt-5">Haberes no imponibles y tributables</h4>
+
+                      <!-- Formulario -->
+                      <form class="row g-4 mt-3">
+                        <!-- Indemnizaciones voluntarias tributables -->
+                        <div class="col-12">
+                          <label for="indemnizaciones-voluntarias" class="form-label fw-bold d-block">Indemnizaciones voluntarias tributables (2417)</label>
+                          <input type="text" id="indemnizaciones-voluntarias" class="form-control" placeholder="Ingrese el valor">
+                        </div>
+
+                        <!-- Indemnizaciones contractuales tributables -->
+                        <div class="col-12">
+                          <label for="indemnizaciones-contractuales" class="form-label fw-bold d-block">Indemnizaciones contractuales tributables (2418)</label>
+                          <input type="text" id="indemnizaciones-contractuales" class="form-control" placeholder="Ingrese el valor">
+                        </div>
+                      </form>
+
+                      <!-- Botones -->
+                      <div class="d-flex flex-column flex-md-row gap-3 mt-4">
+                        <button type="button" class="btn btn-primary-secondary">
+                          <i class="fa-solid fa-chevron-left"></i> Anterior
+                        </button>
+                        <button type="button" class="btn btn-primary-secondary">
+                          Siguiente <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                        <button type="submit" class="btn btn-warning-primary">Terminar liquidación</button>
+                      </div>
+                    </div>
+
+                  </div>
+                  <!--FIN Haberes-->
+
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+
+
+
+          
+
+
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    
+      <style>
+        .num-liqui {
+          .nav-pills {
+            position: relative;
+          }
+    
+          .btn-circle {
+            position: relative;
+            width: 49px;
+            height: 49px;
+            margin-bottom: 58px;
+            background-color: none;
+            border: 1px solid #654209;
+            border-radius: 50% !important;
+            color: #654209;
+            display: flex; /* Para usar flexbox */
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente */
+            text-align: center; /* Para asegurarte de que el texto esté alineado */
+            font-size: 20px; /* Ajusta el tamaño de fuente si es necesario */
+            font-weight: bold;
+          }
+    
+          .btn-circle::after {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 50px; 
+            background-color: #654209;
+            top: 51px; 
+            left: 50%; 
+            transform: translateX(-50%);
+          }
+    
+          .btn-circle:last-of-type::after {
+            display: none; 
+          }
+    
+          .btn-circle.active {
+            color: #654209 !important;
+            background-color: #FFC107 !important;
+          }
+    
+          .btn-circle:hover {
+            color: #654209;
+          }
+
+          .btn-circle.active::after {
+            background-color: #FFC107; 
+          }
+
+          .btn-circle.visited {
+            background-color: #ffeb99; 
+            color: #654209;
+            border-color: #ffeb99;
+          }
+        }
+        
+      </style>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const buttons = document.querySelectorAll(".num-liqui button");
+
+          buttons.forEach((button) => {
+            button.addEventListener("click", () => {
+              // Desactiva el estado activo de todos los botones
+              buttons.forEach((btn) => btn.classList.remove("active"));
+
+              // Marca el botón actual como "visitado"
+              button.classList.add("visited");
+              button.classList.remove("active"); // Quita el estado activo del botón clicado
+
+              // Activa el botón actual
+              button.classList.add("active");
+
+              // Asegúrate de que el botón 1 también tenga la clase "visited" si es diferente al clicado
+              const firstButton = document.querySelector(".num-liqui button:first-child");
+              if (firstButton && firstButton !== button) {
+                firstButton.classList.add("visited");
+                firstButton.classList.remove("active");
+              }
+            });
+          });
+        });
+
+
+
+      </script>
+
+    </body>
+    
+  </html>

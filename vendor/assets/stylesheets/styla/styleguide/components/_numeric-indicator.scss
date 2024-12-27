@@ -1,0 +1,26 @@
+@mixin master-numeric-indicator($color){
+
+  width: fit-content;
+  border-radius: map-get($map: $sizes, $key: 7);
+  font-weight: map-get($font-weights, medium);
+  color: map-get($map: $color, $key: 800);
+  background-color: map-get($map: $color, $key: 100);
+  display: flex;
+  flex-direction: row;
+  gap: map-get($map: $sizes, $key: 1);
+  padding: map-get($map: $sizes, $key: 2) map-get($map: $sizes, $key: 4);
+
+}
+
+.num-indicator-success{
+  @include master-numeric-indicator($success);
+}
+.num-indicator-warning{
+  @include master-numeric-indicator($warning);
+}
+.num-indicator-info{
+  @include master-numeric-indicator($info);
+}
+.num-indicator-danger{
+  @include master-numeric-indicator($danger);
+}

@@ -1,0 +1,28 @@
+// General
+@mixin general-pfp($size-key, $bg-color, $text-color) {
+  $size: map-get($sizes, $size-key);
+
+  width: $size;
+  height: $size;
+  background-color: $bg-color;
+  color: $text-color;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $size * 0.45;
+  font-weight: map-get($font-weights, bold);
+  text-transform: capitalize;
+  line-height: 0;
+  user-select: none;
+}
+
+// Para las empresas
+.pfp-company{
+  @include general-pfp(9, map-get($info, 500), map-get($grayscale, 100));
+}
+
+// Para el usuario
+.pfp-user{
+  @include general-pfp(8, map-get($grayscale, 900), map-get($grayscale, 100));
+}

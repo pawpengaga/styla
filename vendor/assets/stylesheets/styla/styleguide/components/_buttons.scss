@@ -1,0 +1,427 @@
+///////////
+/// BOTONES
+/// Son dependientes de la clases Bootstrap 'btn'
+/// 
+
+// MIXINS
+
+// Paddin, y border radius desactivados pero pensados
+@mixin master-button-creator($bg, $border, $text, $bg-hover, $border-hover, $text-hover, $bg-active, $border-active, $text-active){
+  background-color: $bg;
+  color: $text;
+  padding: map-get($sizes, 2) map-get($sizes, 4);
+  border-radius: 5px;
+  border: 1px solid $border;
+  font-weight: map-get($font-weights, medium);
+  box-sizing: border-box;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, color 0.15s ease-in-out;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  > i {
+    margin-right: map-get($sizes, 2);
+  }
+
+  &:hover{
+    background-color: $bg-hover;
+    border-color: $border-hover;
+    color: $text-hover !important;
+  }
+  &:focus-visible{
+    background-color: $bg !important;
+    border: 1px solid $border !important;
+    color: $text !important;
+    box-shadow: 0 0 0 .25em rgba(map-get($primary, 500), .5);
+  }
+  &:active{
+    background-color: $bg-active !important;
+    border: 1px solid $border-active !important;
+    color: $text-active !important;
+  }
+  &:visited{
+    background-color: $bg-hover;
+    border-color: $border-hover;
+    color: $text-hover !important;
+  }
+}
+
+
+
+// INSTANCES
+// Primary - Primary
+
+.btn-primary-primary {
+  @include master-button-creator(
+    // Normal state
+    map-get($primary, 500), //Fondo
+    map-get($primary, 300), //Borde
+    map-get($primary, 900), //Elementos
+    // Hover state
+    map-get($primary, 400),
+    map-get($primary, 300),
+    map-get($primary, 900),
+    // Active state
+    map-get($primary, 300),
+    map-get($primary, 200),
+    map-get($primary, 900)
+  );
+}
+
+// Primary - Secondary
+
+.btn-primary-secondary {
+  @include master-button-creator(
+    // Normal state
+    #ffffff00,
+    map-get($primary, 800),
+    map-get($primary, 800),
+    // Hover state
+    #ffffff00,
+    map-get($primary, 700),
+    map-get($primary, 700),
+    // Active state
+    #ffffff00,
+    map-get($primary, 600),
+    map-get($primary, 600),
+  );
+}
+
+// Primary - Terciary
+
+.btn-primary-tertiary {
+  @include master-button-creator(
+    // Normal state
+    #ffffff00,                      //Fondo
+    #ffffff00,                      //Borde
+    map-get($primary, 800),           //Elementos
+    // Hover state
+    rgba(map-get($primary, 500), .1), //Fondo
+    #ffffff00,                      //Borde
+    map-get($primary, 700),           //Elementos
+    // Active state
+    rgba(map-get($primary, 500), .05), //Fondo
+    #ffffff00,                      //Borde
+    map-get($primary, 700),           //Elementos
+  );
+}
+
+// Secondary - Primary
+
+.btn-secondary-primary {
+  @include master-button-creator(
+    // Normal state
+    map-get($secondary, 500), //Fondo
+    map-get($secondary, 300), //Borde
+    white, //Elementos
+    // Hover state
+    map-get($secondary, 400),
+    map-get($secondary, 300),
+    white,
+    // Active state
+    map-get($secondary, 300),
+    map-get($secondary, 200),
+    white
+  );
+}
+
+// Secondary - Secondary
+
+.btn-secondary-secondary {
+  @include master-button-creator(
+    // Normal state
+    #ffffff00,
+    map-get($secondary, 500),
+    map-get($secondary, 500),
+    // Hover state
+    #ffffff00,
+    map-get($secondary, 400),
+    map-get($secondary, 400),
+    // Active state
+    #ffffff00,
+    map-get($secondary, 300),
+    map-get($secondary, 300),
+  );
+}
+
+// Secondary - Terciary
+
+.btn-secondary-tertiary {
+  @include master-button-creator(
+    // Normal state
+    #ffffff00,                        //Fondo
+    #ffffff00,                        //Borde
+    map-get($secondary, 500),           //Elementos
+    // Hover state
+    rgba(map-get($secondary, 500), .1), //Fondo
+    #ffffff00,                        //Borde
+    map-get($secondary, 500),           //Elementos
+    // Active state
+    rgba(map-get($secondary, 500), .05), //Fondo
+    #ffffff00,                        //Borde
+    map-get($secondary, 500),           //Elementos
+  );
+}
+
+// Light - Primary
+
+.btn-light-primary {
+  @include master-button-creator(
+    // Normal state
+    map-get($grayscale, 900), //Fondo
+    map-get($grayscale, 700), //Borde
+    white, //Elementos
+    // Hover state
+    map-get($grayscale, 800),
+    map-get($grayscale, 700),
+    white,
+    // Active state
+    map-get($grayscale, 700),
+    map-get($grayscale, 400),
+    white
+  );
+}
+
+// Light - Secondary
+
+.btn-light-secondary {
+  @include master-button-creator(
+    // Normal state
+    #ffffff00,
+    map-get($grayscale, 900),
+    map-get($grayscale, 900),
+    // Hover state
+    #ffffff00,
+    map-get($grayscale, 700),
+    map-get($grayscale, 700),
+    // Active state
+    #ffffff00,
+    map-get($grayscale, 600),
+    map-get($grayscale, 600), // Tentativo a 500
+  );
+}
+
+// Light - Terciary
+
+.btn-light-tertiary {
+  @include master-button-creator(
+    // Normal state
+    #ffffff00,                        //Fondo
+    #ffffff00,                        //Borde
+    map-get($grayscale, 900),           //Elementos
+    // Hover state
+    rgba(map-get($grayscale, 900), .1), //Fondo
+    #ffffff00,                        //Borde
+    map-get($grayscale, 900),           //Elementos
+    // Active state
+    rgba(map-get($grayscale, 900), .05), //Fondo
+    #ffffff00,                        //Borde
+    map-get($grayscale, 900),           //Elementos Tentativo a 500
+  );
+}
+
+// Info - Primary
+.btn-info-primary {
+  @include master-button-creator(
+    // Normal state
+    map-get($info, 500), //Fondo
+    map-get($info, 300), //Borde
+    white, //Elementos
+    // Hover state
+    map-get($info, 400),
+    map-get($info, 300),
+    white,
+    // Active state
+    map-get($info, 300),
+    map-get($info, 200),
+    white
+  );
+}
+// Info - Secondary
+.btn-info-secondary {
+  @include master-button-creator(
+    // Normal state
+    #ffffff00,
+    map-get($info, 500),
+    map-get($info, 500),
+    // Hover state
+    #ffffff00,
+    map-get($info, 400),
+    map-get($info, 400),
+    // Active state
+    #ffffff00,
+    map-get($info, 300),
+    map-get($info, 300),
+  );
+}
+// Info - Tertiary
+.btn-info-tertiary {
+  @include master-button-creator(
+    // Normal state
+    #ffffff00,                        //Fondo
+    #ffffff00,                        //Borde
+    map-get($info, 500),           //Elementos
+    // Hover state
+    rgba(map-get($info, 500), .1), //Fondo
+    #ffffff00,                        //Borde
+    map-get($info, 500),           //Elementos
+    // Active state
+    rgba(map-get($info, 500), .05), //Fondo
+    #ffffff00,                        //Borde
+    map-get($info, 500),           //Elementos
+  );
+}
+
+// Success - Primary
+.btn-success-primary {
+  @include master-button-creator(
+    // Normal state
+    map-get($success, 500), //Fondo
+    map-get($success, 300), //Borde
+    white, //Elementos
+    // Hover state
+    map-get($success, 400),
+    map-get($success, 300),
+    white,
+    // Active state
+    map-get($success, 300),
+    map-get($success, 200),
+    white
+  );
+}
+
+// Success - Secondary
+.btn-success-secondary {
+  @include master-button-creator(
+    // Normal state
+    #ffffff00,
+    map-get($success, 500),
+    map-get($success, 500),
+    // Hover state
+    #ffffff00,
+    map-get($success, 400),
+    map-get($success, 400),
+    // Active state
+    #ffffff00,
+    map-get($success, 300),
+    map-get($success, 300),
+  );
+}
+
+// Success - Tertiary
+.btn-success-tertiary {
+  @include master-button-creator(
+    // Normal state
+    #ffffff00,                        //Fondo
+    #ffffff00,                        //Borde
+    map-get($success, 500),           //Elementos
+    // Hover state
+    rgba(map-get($success, 500), .1), //Fondo
+    #ffffff00,                        //Borde
+    map-get($success, 500),           //Elementos
+    // Active state
+    rgba(map-get($success, 500), .05), //Fondo
+    #ffffff00,                        //Borde
+    map-get($success, 500),           //Elementos
+  );
+}
+
+// Warning - Primary
+.btn-warning-primary {
+  @include master-button-creator(
+    // Normal state
+    map-get($warning, 500), //Fondo
+    map-get($warning, 300), //Borde
+    map-get($warning, 900), //Elementos
+    // Hover state
+    map-get($warning, 400),
+    map-get($warning, 300),
+    map-get($warning, 900),
+    // Active state
+    map-get($warning, 300),
+    map-get($warning, 200),
+    map-get($warning, 900)
+  );
+}
+// Warning - Secondary
+.btn-warning-secondary {
+  @include master-button-creator(
+    // Normal state
+    #ffffff00,
+    map-get($warning, 800),
+    map-get($warning, 800),
+    // Hover state
+    #ffffff00,
+    map-get($warning, 700),
+    map-get($warning, 700),
+    // Active state
+    #ffffff00,
+    map-get($warning, 600),
+    map-get($warning, 600),
+  );
+}
+// Warning - Tertiary
+.btn-warning-tertiary {
+  @include master-button-creator(
+    // Normal state
+    #ffffff00,                      //Fondo
+    #ffffff00,                      //Borde
+    map-get($warning, 800),           //Elementos
+    // Hover state
+    rgba(map-get($warning, 500), .1), //Fondo
+    #ffffff00,                      //Borde
+    map-get($warning, 700),           //Elementos
+    // Active state
+    rgba(map-get($warning, 500), .05), //Fondo
+    #ffffff00,                      //Borde
+    map-get($warning, 700),           //Elementos
+  );
+}
+// Danger - Primary
+.btn-danger-primary {
+  @include master-button-creator(
+    // Normal state
+    map-get($danger, 500), //Fondo
+    map-get($danger, 300), //Borde
+    white, //Elementos
+    // Hover state
+    map-get($danger, 400),
+    map-get($danger, 300),
+    white,
+    // Active state
+    map-get($danger, 300),
+    map-get($danger, 200),
+    white
+  );
+}
+// Danger - Secondary
+.btn-danger-secondary {
+  @include master-button-creator(
+    // Normal state
+    #ffffff00,
+    map-get($danger, 500),
+    map-get($danger, 500),
+    // Hover state
+    #ffffff00,
+    map-get($danger, 400),
+    map-get($danger, 400),
+    // Active state
+    #ffffff00,
+    map-get($danger, 300),
+    map-get($danger, 300),
+  );
+}
+// Danger - Tertiary
+.btn-danger-tertiary {
+  @include master-button-creator(
+    // Normal state
+    #ffffff00,                        //Fondo
+    #ffffff00,                        //Borde
+    map-get($danger, 500),           //Elementos
+    // Hover state
+    rgba(map-get($danger, 500), .1), //Fondo
+    #ffffff00,                        //Borde
+    map-get($danger, 500),           //Elementos
+    // Active state
+    rgba(map-get($danger, 500), .05), //Fondo
+    #ffffff00,                        //Borde
+    map-get($danger, 500),           //Elementos
+  );
+}

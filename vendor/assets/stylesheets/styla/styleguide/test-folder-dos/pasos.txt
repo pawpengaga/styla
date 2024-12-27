@@ -1,0 +1,6 @@
+// Estoy detectando patrones en el codigo que muy facilmente se pueden volver mixins en el futuro. Como:
+// - El estilizado en focus de los elementos
+// - La manera en que están estilizados los menús
+
+// NOTAS: 19-08-2024
+// Evaluar posibilidad de mantener Styla como repo a parte para su facilidad de ser clonado en proyecto

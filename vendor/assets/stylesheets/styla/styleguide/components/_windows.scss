@@ -1,0 +1,9 @@
+@mixin window-master-creator($bg, $border){
+  border-radius: 5px;
+  background-color: $bg;
+  border: 1px solid $border;
+}
+
+.window-white{
+  @include window-master-creator(white, rgba(map-get($grayscale, 200), 0.5));
+}

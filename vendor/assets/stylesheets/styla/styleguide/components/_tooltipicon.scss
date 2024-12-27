@@ -1,0 +1,24 @@
+@mixin tooltip-icon-maker(){
+  color: map-get($grayscale, 800);
+  width: fit-content;
+  height: fit-content;
+  
+  i {
+    background-color: map-get($grayscale, 100);
+    border-radius: 50%;
+    border: 1px solid map-get($grayscale, 100);
+  }
+}
+
+.tooltip-icon-base{
+  @include tooltip-icon-maker();
+  font-size: map-get(map-get($font-sizes, base), size);
+}
+.tooltip-icon-xl{
+  @include tooltip-icon-maker();
+  font-size: map-get(map-get($font-sizes, xl), size);
+}
+.tooltip-icon-3xl{
+  @include tooltip-icon-maker();
+  font-size: map-get(map-get($font-sizes, 3xl), size);
+}

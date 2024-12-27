@@ -1,0 +1,215 @@
+///////////////////////////////////
+//TYPOGRAPHY
+///////////////////////////////////
+
+// Main
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+$main-type: 'Open Sans', sans-serif;
+
+// Font weights
+$font-weights:(
+  regular: 400,
+  medium: 600,
+  bold: 800,
+);
+
+// Font Sizes and height lines
+$font-sizes:(
+  xs: (
+    size: 0.75em, // 12px
+    line-height: 1em
+  ),
+  sm: (
+    size: 0.875em, // 14px
+    line-height: 1.25em
+  ),
+  base: (
+    size: 1em, // 16px
+    line-height: 1.5em
+  ),
+  lg: (
+    size: 1.125em, // 18px
+    line-height: 1.75em
+  ),
+  xl: (
+    size: 1.25em, // 20px
+    line-height: 1.75em
+  ),
+  2xl: (
+    size: 1.5em, // 24px
+    line-height: 2em
+  ),
+  3xl: (
+    size: 1.875em, // 30px
+    line-height: 2.25em
+  ),
+  4xl: (
+    size: 2.25em, // 36px
+    line-height: 1
+  ),
+  5xl: (
+    size: 3em, // 48px
+    line-height: 1
+  ),
+  6xl: (
+    size: 3.75em, // 60px
+    line-height: 1
+  ),
+  7xl: (
+    size: 4.5em, // 72px
+    line-height: 1
+  ),
+  8xl: (
+    size: 6em, // 96px
+    line-height: 1
+  ),
+  9xl: (
+    size: 8em,// 128px
+    line-height: 1
+  ) 
+);
+
+// Semantic text tags
+$semantic-tags:(
+  small: map-get($font-sizes, xs),
+  p: map-get($font-sizes, base),
+  h6: map-get($font-sizes, lg),
+  h5: map-get($font-sizes, xl),
+  h4: map-get($font-sizes, 2xl),
+  h3: map-get($font-sizes, 3xl),
+  h2: map-get($font-sizes, 4xl),
+  h1: map-get($font-sizes, 5xl)
+);
+
+///////////////////////////////////
+// SIZING AND SPACING
+///////////////////////////////////
+
+$sizes: (
+  1: 0.25em, // xs (4px)
+  2: 0.5em, // sm (8px)
+  3: 0.75em, // md (12px)
+  4: 1em, // base (16px)
+  5: 1.5em, // lg (24px)
+  6: 2em, // xl (32px)
+  7: 2.25em, // 2xl (36px)
+  8: 2.5em, // 3xl (40px)
+  9: 3em, // 4xl (48px)
+  10: 4em, // 5xl (64px)
+  11: 6em, // 6xl (96px)
+  12: 8em, // 7xl (128px)
+  13: 12em, // 8xl (192px)
+  14: 16em, // 9xl (256px)
+  15: 24em, // 10xl (384px)
+  16: 32em, // 11xl (512px)
+  17: 36em, // 12xl (576px)
+  18: 40em, // 13xl (640px)
+  19: 48em // 14xl (768px)
+);
+
+///////////////////////////////////
+// COLORS
+///////////////////////////////////
+
+// Greyscale
+$grayscale:(
+  100: #F1F1F2,
+  200: #D5D5D6,
+  300: #B8B9BA,
+  400: #9C9D9E,
+  500: #808182,
+  600: #646465,
+  700: #484849,
+  800: #2B2C2D,
+  900: #0F1011
+);
+
+// DEPRECATED
+$grayscale-deprecated:(
+  100: #F4F3F3,
+  200: #D4D2D2,
+  300: #B3B2B2,
+  400: #939191,
+  500: #727070,
+  600: #5D5B5B,
+  700: #474545,
+  800: #323030,
+  900: #1C1A1A
+);
+
+// Brand Colors
+
+$primary:(
+  100: #FFF1E3,
+  200: #FFE5AC,
+  300: #FFD975,
+  400: #FFCD3E,
+  500: #FFC107,
+  600: #CC9708,
+  700: #996C08,
+  800: #654209,
+  900: #321709
+);
+
+$secondary:(
+  100: #FFF0FC,
+  200: #FDBEE6,
+  300: #FB8CD0,
+  400: #F859B9,
+  500: #F627A3,
+  600: #C41E80,
+  700: #93155E,
+  800: #610B3B,
+  900: #2F0218
+);
+
+// Semantic
+
+$success:(
+  100: #EEFFEF,
+  200: #B9EAC2,
+  300: #85D495,
+  400: #50BF68,
+  500: #1BAA3B,
+  600: #168E2D,
+  700: #12711F,
+  800: #0D5511,
+  900: #083803
+);
+
+$info:(
+  100: #E0EDFE,
+  200: #AFCFFB,
+  300: #7FB2F9,
+  400: #4E94F6,
+  500: #1D76F3,
+  600: #175EC2,
+  700: #104692,
+  800: #0A2E61,
+  900: #031630
+);
+
+$warning:(
+  100: #FEF5E9,
+  200: #FCE1BA,
+  300: #FACD8B,
+  400: #F7B95D,
+  500: #F5A52E,
+  600: #C58324,
+  700: #956219,
+  800: #64400F,
+  900: #341E04
+);
+
+$danger:(
+  100: #FEEFF3,
+  200: #F3BEC6,
+  300: #E88E9A,
+  400: #DD5E6E,
+  500: #D22D41,
+  600: #AB2335,
+  700: #831929,
+  800: #5C0F1D,
+  900: #340511
+);
+

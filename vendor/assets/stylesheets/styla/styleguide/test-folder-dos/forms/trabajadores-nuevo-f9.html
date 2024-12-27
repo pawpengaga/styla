@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F9 Nuevo Contrato</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../../style.css">
+    <body style="background-color: rgba(128, 128, 128, 0.116);">
+
+        <div class="container mt-5">
+            <div class="bg-white rounded border p-4">
+              <div class="m-4">
+                <h4 class="fw-bold pb-4">Remuneraciones</h4>
+                <form>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <label for="tipo-sueldo" class="form-label fw-bold">Tipo de sueldo</label>
+                      <select class="form-select" id="tipo-sueldo">
+                        <option selected>Seleccione una opción</option>
+                        <!-- Opciones adicionales -->
+                      </select>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <label for="horas-semana" class="form-label fw-bold">Nº de horas por semana</label>
+                      <input type="text" class="form-control" id="horas-semana" placeholder="Ej: 40">
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <label for="valor-sueldo" class="form-label fw-bold">Valor del sueldo</label>
+                      <input type="text" class="form-control" id="valor-sueldo" placeholder="Ej: 4900000">
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <label for="recargo-extra" class="form-label fw-bold">Porcentaje de recargo día extraordinario (%)</label>
+                      <input type="text" class="form-control" id="recargo-extra" placeholder="No puede ser inferior a 30">
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <label for="sobresueldo" class="form-label fw-bold">Sobresueldo (2102)</label>
+                      <select class="form-select" id="sobresueldo">
+                        <option selected>Seleccione una opción</option>
+                        <!-- Opciones adicionales -->
+                      </select>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <label for="comisiones" class="form-label fw-bold">Comisiones (2103)</label>
+                      <select class="form-select" id="comisiones">
+                        <option selected>Seleccione una opción</option>
+                        <!-- Opciones adicionales -->
+                      </select>
+                    </div>
+                  </div>
+                
+                  <!-- Semana Corrida (ocupa todo el ancho) -->
+                  <div class="mb-4">
+                    <label for="semana-corrida" class="form-label fw-bold">Semana Corrida (2104)</label>
+                    <select class="form-select" id="semana-corrida">
+                      <option selected>Seleccione una opción</option>
+                      <!-- Opciones adicionales -->
+                    </select>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <label for="tratos" class="form-label fw-bold">Tratos (2112)</label>
+                      <select class="form-select" id="tratos">
+                        <option selected>Seleccione una opción</option>
+                        <!-- Opciones adicionales -->
+                      </select>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <label for="sueldo-empresarial" class="form-label fw-bold">Sueldo empresarial (2161)</label>
+                      <select class="form-select" id="sueldo-empresarial">
+                        <option selected>Seleccione una opción</option>
+                        <!-- Opciones adicionales -->
+                      </select>
+                    </div>
+                  </div>
+                
+                  <!-- Bonos u otras remuneraciones (ocupa todo el ancho) -->
+                  <div class="mb-4">
+                    <label for="bonos" class="form-label fw-bold">Bonos u otras remuneraciones fijas mensuales (2111)</label>
+                    <select class="form-select" id="bonos">
+                      <option selected>Seleccione una opción</option>
+                      <!-- Opciones adicionales -->
+                    </select>
+                  </div>
+                
+                  <!-- Botones -->
+                  <div class="d-flex justify-content-start mt-4">
+                    <button class="btn-primary-secondary me-4"><i class="fa fa-chevron-left"></i> Anterior</button>
+                    <button class="btn-primary-primary me-4">Siguiente <i class="fa fa-chevron-right"></i></button>
+                    <button class="btn-primary-secondary">Guardar borrador</button>
+                  </div>
+                </form>
+                
+              </div>
+            </div>
+          </div>
+          
+        
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    </body>
+</html>

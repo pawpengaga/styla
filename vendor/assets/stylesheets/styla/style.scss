@@ -1,0 +1,49 @@
+:root {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: inherit;
+}
+
+/*** STYLA BASE ***/
+@import 'styleguide/base/variables';
+@import 'styleguide/base/mixins';
+@import 'styleguide/base/misc';
+
+/****************************/
+/* DESIGN SYSTEM */
+
+@import 'styleguide/utilities/font';
+@import 'styleguide/utilities/spacing';
+@import 'styleguide/utilities/borders';
+@import 'styleguide/utilities/radius';
+@import 'styleguide/utilities/colors';
+@import 'styleguide/utilities/elevations';
+@import 'styleguide/utilities/opacity';
+@import 'styleguide/utilities/sizing';
+
+/****************************/
+/* COMPONENTS */
+
+@import 'styleguide/components/buttons';
+@import 'styleguide/components/links';
+@import 'styleguide/components/inputs';
+@import 'styleguide/components/badges';
+@import 'styleguide/components/windows';
+@import 'styleguide/components/popover';
+@import 'styleguide/components/tooltipicon';
+@import 'styleguide/components/strength_meter';
+@import 'styleguide/components/breadcrumbs';
+@import 'styleguide/components/profile-picture';
+@import 'styleguide/components/scrollbar';
+@import 'styleguide/components/alerts';
+@import 'styleguide/components/num-form-circle';
+
+@import 'styleguide/components/pagination';
+@import 'styleguide/components/numeric-indicator';
+@import 'styleguide/components/nav-liquidacion';
+
+/****************************/

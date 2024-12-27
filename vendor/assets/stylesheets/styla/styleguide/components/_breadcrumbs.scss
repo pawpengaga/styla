@@ -1,0 +1,15 @@
+.breadcrumb-section{
+  display: flex;
+  flex-direction: row;
+  gap: map-get($sizes, 3);
+}
+
+.breadcrumb-link{
+  font-weight: map-get($font-weights, regular) !important;
+  @include master-link-creator(map-get($grayscale, 900), map-get($primary, 500));
+}
+
+.breadcrumb-link-current{
+  font-weight: map-get($font-weights, regular) !important;
+  @include master-link-creator(map-get($grayscale, 600), map-get($primary, 500));
+}

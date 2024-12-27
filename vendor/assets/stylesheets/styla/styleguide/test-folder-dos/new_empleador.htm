@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empleadores Index</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /*Codigo css adicional sólo con motivos de presentación*/
+    /*button + button {
+      margin-left: 1rem;
+      }*/
+      h2 {
+        margin-bottom: 2.5rem;
+      }
+      body {
+        background-color: rgba(128, 128, 128, 0.185);
+      }
+  </style>
+</head>
+
+<body>
+    <!--Navbar que se debe programar para ser utilizada cuando se solicite-->
+    <div class="navbar-custom">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+          <!-- Sección de información de la empresa -->
+            <div class="info-empresa d-flex align-items-center me-0"> <!-- Cambia margin-right a me-4 -->
+                <div class="logo-circle bg-dark text-white d-flex align-items-center justify-content-center">
+                Te
+                </div>
+                <div class="ms-2">
+                    <div class="d-flex align-items-center prim-lin">
+                        <h6 class="mb-0 fw-bold">EMPRESA LTDA</h6>
+                        <p class="mb-0 mx-2">• 12.564.775-k</p>
+                    </div>
+                    <div class="d-flex align-items-center seg-lin">
+                        <p class="mb-0">999+ empleados</p>
+                        <i class="fas fa-eye ms-1 text-secondary" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="vr"></div>
+                <!-- Botones -->
+                <div class="botones d-flex justify-content-start"> <!-- Cambia ms-3 a ms-2 -->
+                    <button class="btn btn-primary-secondary">
+                    <i class="fas fa-lock me-1" aria-hidden="true"></i> Cambiar contraseña
+                    </button>
+                    <button class="btn btn-primary-primary">
+                    <i class="fas fa-user me-1" aria-hidden="true"></i> Cambiar usuario
+                    </button>
+                </div>
+            </div>
+      
+
+      
+          <!-- Menú de usuario -->
+           
+            <div class="dropdown d-flex">
+                <div class="logo-circle bg-dark text-white d-flex align-items-center justify-content-center">Te</div>
+                <div class="dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false"></div>
+                <ul class="dropdown-menu dropdown-menu-end window-shadow-md border-none" aria-labelledby="dropdownUser">
+                    <li><strong class="dropdown-item fw-bold">EMPRESA LTDA.</strong></li>
+                    <li class=""><a class="dropdown-item text-primary-500" href="#">proyecto Premium</a></li>
+                    <hr class="lin-bar">
+                    <li><a class="dropdown-item" href="#"> Editar perfil  <i class="fas fa-external-link m-2"></i></a></li>
+                    <li><a class="dropdown-item" href="#"> Cerrar sesión  <i class="fas fa-sign-out-alt m-2"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--TERMINO NAVBAR-->
+
+    <!--VISUALIZACION DE CONTENIDO-->
+    
+    <div class="full-signup">
+        <div class="container w-50">
+            <div class="breadcrumb-section py-4">
+                <!-- Elementos a ser iterados una y otra vez -->
+                <span><a href="#" class="breadcrumb-link">Dashboard</a></span>
+                <span>/</span>
+                <!-- Elemento final del array de paginas -->
+                <span><a href="#" class="breadcrumb-link-current">Nueva empresa</a></span>
+            </div>
+            <div class="bg-white rounded border" >
+                <div class="container my-3 p-5">
+                    <!-- Sección de Información Inicial -->
+                    <h4 class="fw-bold mb-4">Información inicial</h4>
+                    <form>
+                        <div class="row mb-3">
+                        <!-- Nombre de empresa -->
+                        <div class="col-md-12 mb-3">
+                            <label for="nombreEmpresa" class="form-label">Nombre de empresa</label>
+                            <input type="text" class="form-control" id="nombreEmpresa" placeholder="Placeholder">
+                        </div>
+                    
+                        <!-- Alias -->
+                        <div class="col-md-12 mb-3">
+                            <label for="aliasEmpresa" class="form-label">Alias</label>
+                            <input type="text" class="form-control" id="aliasEmpresa" placeholder="Placeholder">
+                        </div>
+                        </div>
+                    
+                        <div class="row mb-4">
+                        <!-- RUT de empresa -->
+                        <div class="col-md-6 mb-3">
+                            <label for="rutEmpresa" class="form-label">RUT de empresa</label>
+                            <input type="text" class="form-control" id="rutEmpresa" placeholder="12.345.678-9">
+                        </div>
+                    
+                        <!-- Email de empresa -->
+                        <div class="col-md-6 mb-3">
+                            <label for="emailEmpresa" class="form-label">Email de empresa</label>
+                            <input type="email" class="form-control" id="emailEmpresa" placeholder="ejemplo@empresa.com">
+                        </div>
+                        </div>
+                    </form>
+                </div>
+                <hr />
+                <div class="container p-4 ">
+                    <!-- Sección de Dirección -->
+                    <h5 class="fw-bold mb-4">Dirección</h5>
+                    <form>
+                        <div class="row mb-3">
+                        <!-- Región -->
+                        <div class="col-md-6 mb-3">
+                            <label for="regionEmpresa" class="form-label">Región</label>
+                            <input type="text" class="form-control" id="regionEmpresa" placeholder="LOS LAGOS">
+                        </div>
+                    
+                        <!-- Comuna -->
+                        <div class="col-md-6 mb-3">
+                            <label for="comunaEmpresa" class="form-label">Comuna</label>
+                            <input type="text" class="form-control" id="comunaEmpresa" placeholder="LAS CONDES">
+                        </div>
+                        </div>
+                    
+                        <div class="row mb-3">
+                        <!-- Calle -->
+                        <div class="col-md-4 mb-3">
+                            <label for="calleEmpresa" class="form-label">Calle</label>
+                            <input type="text" class="form-control" id="calleEmpresa" placeholder="Placeholder">
+                        </div>
+                    
+                        <!-- Número -->
+                        <div class="col-md-4 mb-3">
+                            <label for="numeroEmpresa" class="form-label">Número</label>
+                            <input type="text" class="form-control" id="numeroEmpresa" placeholder="0000">
+                        </div>
+                    
+                        <!-- Depto / Oficina (Si aplica) -->
+                        <div class="col-md-4 mb-3">
+                            <label for="deptoEmpresa" class="form-label">Depto / Oficina (Si aplica)</label>
+                            <input type="text" class="form-control" id="deptoEmpresa" placeholder="0000">
+                        </div>
+                        </div>
+                    
+                        <!-- Botones -->
+                        <div class="d-flex justify-content-start gap-3">
+                        <button type="button" class="btn btn-primary-primary">Registrar empresa</button>
+                        <button type="button" class="btn btn-light-secondary">
+                            Ir a actividades económicas <i class="fas fa-arrow-right ms-2"></i>
+                        </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!---Pagina 2 Hay que configurar-->
+
+    <div class="d-flex" style="height: 100px;"></div>
+
+
+    <!--esta informacion no debe aparecer en ninguna vista, es solo para mostrar la division de las vistas contempladas en esta parte-->
+    <hr>
+    <center>Siguiente vista La siguiente vista (Anadir actividad economica) se debe activar al momento en q pinche la opcion de ir a actividades economicas, dispuesta en el boton inferior "Ir a actividades conomicas"</center>
+    <hr>
+    <div class="d-flex" style="height: 100px;"></div>
+    <!--Fin texto que no debe aparecer-->
+
+
+    <!--Navbar que se debe programar para ser utilizada cuando se solicite-->
+
+    <!--TERMINO NAVBAR-->
+
+    <!--VISUALIZACION DE CONTENIDO-->
+
+    
+    <div class="full-signup">
+        <div class="container w-50">
+            <div class="breadcrumb-section my-4">
+                <!-- Elementos a ser iterados una y otra vez -->
+                <span><a href="#" class="breadcrumb-link">Dashboard</a></span>
+                <span>/</span>
+                <!-- Elemento final del array de paginas -->
+                <span><a href="#" class="breadcrumb-link-current">Nueva empresa</a></span>
+            </div>
+
+
+            <div class="container my-4 p-4 bg-white rounded border">
+                <!-- Sección Añadir Actividad Económica -->
+                <h5 class="fw-bold py-3">Añadir actividad económica</h5>
+                <form>
+                    <div class="row py-1">
+                        <!-- Buscar por código -->
+                        <div class="col-md-2 mb-3">
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-end-0">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                                <input type="text" class="form-control border-start-0" placeholder="Código" value="62511">
+                            </div>
+                        </div>
+                
+                        <!-- Buscar por nombre o código -->
+                        <div class="col-md-10 mb-3">
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-end-0">
+                                    <i class="fas fa-search"></i>
+                                    <div class="tooltip-icon-base text-end"
+                                        data-bs-toggle="popover" data-bs-placement="left"
+                                        data-bs-custom-class="popover-black me-2"
+                                        data-bs-content="Popover base (16px)">
+                                        <i class="fa-solid fa-circle-question"></i>
+                                    </div>
+                                </span>
+                                <input type="text" class="form-control border-start-0" placeholder="Nombre o código">
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Lista de actividades para agregar (aQUI SE IMPRIME LISTADO AUTOMATICO DEL BUSCADOR SEGUN LA BUSQUEDA)-->
+                    <!-- Elemento individual de listado -->
+                    <div class="border rounded p-3 d-flex justify-content-between align-items-center mb-2 empresa-item">
+                        <!-- Contenedor para el Código y el Título en línea -->
+                        <div class="d-flex align-items-center">
+                          <p class="mb-0 me-3">COD: 62511</p> <!-- Espacio a la derecha del código -->
+                          <h6 class="fw-800 mb-0">Artículos de aseo y detergentes</h6>
+                        </div>
+                      
+                        <!-- Icono al final -->
+                        <a href="#" class="text-warning"><i class="fas fa-plus-circle"></i></a>
+                    </div>
+                      
+                    
+                    <!-- Otro elemento individual de listado -->
+                    <div class="border rounded p-3 d-flex justify-content-between align-items-center mb-2">
+                        <!-- Contenedor para el Código y el Título en línea -->
+                        <div class="d-flex align-items-center">
+                          <p class="mb-0 me-3">COD: 62525</p> <!-- Espacio a la derecha del código -->
+                          <h6 class="fw-800 mb-0">Barracas de fierro</h6>
+                        </div>
+                      
+                        <!-- Icono al final -->
+                        <a href="#" class="text-warning"><i class="fas fa-plus-circle"></i></a>
+                    </div>
+
+                    <div class="border rounded p-3 d-flex justify-content-between align-items-center mb-2">
+                        <!-- Contenedor para el Código y el Título en línea -->
+                        <div class="d-flex align-items-center">
+                          <p class="mb-0 me-3">COD: 62511</p> <!-- Espacio a la derecha del código -->
+                          <h6 class="fw-800 mb-0">Artículos de aseo y detergentes</h6>
+                        </div>
+                      
+                        <!-- Icono al final -->
+                        <a href="#" class="text-warning"><i class="fas fa-plus-circle"></i></a>
+                    </div>
+                      
+                    
+
+                      
+                    
+                    <!-- Otro elemento individual de listado -->
+                    <div class="border rounded p-3 d-flex justify-content-between align-items-center mb-2">
+                        <!-- Contenedor para el Código y el Título en línea -->
+                        <div class="d-flex align-items-center">
+                          <p class="mb-0 me-3">COD: 62525</p> <!-- Espacio a la derecha del código -->
+                          <h6 class="fw-800 mb-0">Barracas de fierro</h6>
+                        </div>
+                      
+                        <!-- Icono al final -->
+                        <a href="#" class="text-warning"><i class="fas fa-plus-circle"></i></a>
+                    </div>
+
+                    <div class="border rounded p-3 d-flex justify-content-between align-items-center mb-2">
+                        <!-- Contenedor para el Código y el Título en línea -->
+                        <div class="d-flex align-items-center">
+                          <p class="mb-0 me-3">COD: 62511</p> <!-- Espacio a la derecha del código -->
+                          <h6 class="fw-800 mb-0">Artículos de aseo y detergentes</h6>
+                        </div>
+                      
+                        <!-- Icono al final -->
+                        <a href="#" class="text-warning"><i class="fas fa-plus-circle"></i></a>
+                    </div>
+                      
+                    
+                    <!-- Otro elemento individual de listado -->
+                    <div class="border rounded p-3 d-flex justify-content-between align-items-center mb-2">
+                        <!-- Contenedor para el Código y el Título en línea -->
+                        <div class="d-flex align-items-center">
+                          <p class="mb-0 me-3">COD: 62525</p> <!-- Espacio a la derecha del código -->
+                          <h6 class="fw-800 mb-0">Barracas de fierro</h6>
+                        </div>
+                      
+                        <!-- Icono al final -->
+                        <a href="#" class="text-warning"><i class="fas fa-plus-circle"></i></a>
+                    </div>
+
+
+                    
+
+  
+                    <!--tERMINO DE LISTA DE ACTIVIDADES ECONOMICAS-->
+                </form>
+
+                <div class="py-1"><hr></div>
+
+                <!-- Sección Mis Actividades Económicas -->
+                <h5 class="fw-bold mb-4 py-2">Mis actividades económicas</h5>
+                
+                <!-- Lista de actividades económicas ya seleccionadas -->
+                <div class="list-group mb-4">
+                    <div class="list-group-item d-flex justify-content-between align-items-center p-3">
+                        <span><strong>COD: 62525</strong> Barracas de fierro</span>
+                        <i class="fas fa-check-circle text-success"></i>
+                    </div>
+                    <div class="list-group-item d-flex justify-content-between align-items-center p-3">
+                        <span><strong>COD: 62529</strong> Casas de música, instrumentos musicales, discos, radios, televisores, etc.</span>
+                        <i class="fas fa-check-circle text-success"></i>
+                    </div>
+                    <div class="list-group-item d-flex justify-content-between align-items-center p-3">
+                        <span><strong>COD: 71112</strong> Construcción y reparación del material rodante y mantenimiento de infraestructura</span>
+                        <i class="fas fa-check-circle text-success"></i>
+                    </div>
+                    <div class="list-group-item d-flex justify-content-between align-items-center p-3">
+                        <span><strong>COD: 71312</strong> Servicios relacionados</span>
+                        <i class="fas fa-check-circle text-success"></i>
+                    </div>
+                </div>
+                
+                <!-- Botón Ir a datos de empresa -->
+                <button type="button" class="btn btn-outline-secondary">
+                    <i class="fas fa-arrow-left me-2"></i> Ir a datos de empresa
+                </button>
+            </div>
+                
+        
+        
+        </div>    
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    
+</body>
+
+</html>

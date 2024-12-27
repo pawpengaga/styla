@@ -1,0 +1,11 @@
+// Greyscale
+@include color-generator($grayscale, 'gray');
+
+// Brand Colors
+@include color-generator($primary, 'primary');
+@include color-generator($secondary, 'secondary');
+
+// Semantic Colors
+@include color-generator($success, 'success');
+@include color-generator($info, 'info');
+@include color-generator($warning, 'warning');

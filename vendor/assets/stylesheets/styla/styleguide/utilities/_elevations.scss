@@ -1,0 +1,32 @@
+@mixin box-shadow-creator($pocx, $pocy, $blur, $spread, $color, $ratio) {
+  box-shadow: $pocx $pocy $blur $spread rgba($color, $ratio);
+}
+
+@mixin drop-shadow-creator($pocx, $pocy, $blur, $color, $ratio) {
+  filter: drop-shadow($pocx $pocy $blur rgba($color, $ratio));
+}
+
+// DEPRECATED
+.window-close {
+  @include box-shadow-creator(0px, 4px, 4px, 0px, black, 0.25);
+}
+
+.element-close {
+  @include drop-shadow-creator(0px, 4px, 4px, black, 0.25);
+}
+
+// USAR
+
+// For windows
+
+.window-shadow{
+  @include box-shadow-creator(0px, 1px, 3px, 0px, black, 0.2);
+}
+
+.window-shadow-md{
+  @include box-shadow-creator(0px, 5px, 15px, 0px, black, 0.2);
+}
+
+.window-shadow-xl{
+  @include box-shadow-creator(0px, 15px, 35px, 0px, black, 0.2);
+}

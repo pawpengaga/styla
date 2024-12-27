@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../../style.css">
+  </head>
+
+
+  <body class="bg-gray-100">
+    <div class="container mt-5">
+
+      <div class="breadcrumb-title py-4">
+          <a class="link-primary" href="#">Dashboard</a> / 
+          <a class="link-secondary" href="#">Selección de empresa</a>
+      </div>
+      <!-- Header -->
+      <div class="container card mb-4 p-4 my-3">
+        <div class="d-flex align-items-center gap-3">
+          <!---Icono de compañia--->
+          <div class="col-1 my-auto d-flex flex-column justify-content-center mx-2">
+            <div class="pfp-company my-auto mx-auto">Te</div>
+          </div>
+
+          <div class="col-7 my-auto d-flex flex-column">
+            <!---Titulo de liquidaciones--->
+            <div class="pt-4">
+              <h2 class="fw-bold">Liquidaciones para Octubre 2024</h2>
+            </div>
+            <!--Selector de empleado y mes--->
+            <div>
+              <div class="row align-items-center ">
+          
+                <div class="col-6 mt-4">
+                  <div class="input-icon-left">
+                    <input type="text" name="hello" id="textInput" class="form-control" placeholder="Buscar empleador por nombre" /> <br />
+                    <i class="fa fa-search"></i>
+                  </div>
+                </div>                
+                
+                <div class="col-6 row align-items-center">
+                  <div class="col-5">
+                    <select class="form-select">
+                      <option>Octubre</option>
+                      <option>Noviembre</option>
+                    </select>
+                  </div>  
+                  <div class="col-4">
+                    <select class="form-select">
+                      <option>2024</option>
+                      <option>2023</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+
+          <!---Botón Generador de Remuneración-->
+          <div class="col-3 ms-5 ps-3">
+            <button class="btn btn-primary-secondary w-100">
+              Generar remuneración <i class="fa fa-plus-circle ms-1"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alertas dedicadas
+      <div class="alerts">
+        <div class="alert alert-danger d-flex align-items-center gap-3" role="alert">
+          <i class="bi bi-x-circle fs-5"></i>
+          <div>
+            <strong>Los indicadores previsionales</strong> aún no están disponibles para este mes.
+          </div>
+          <button type="button" class="btn-close ms-auto"></button>
+        </div>
+        <div class="alert alert-danger d-flex align-items-center gap-3" role="alert">
+          <i class="bi bi-x-circle fs-5"></i>
+          <div>
+            <strong>El Impuesto Único de Segunda Categoría</strong> aún no está disponible para este mes.
+          </div>
+          <button type="button" class="btn-close ms-auto"></button>
+        </div>
+      </div>
+
+      -->
+        
+
+      <div class="container card mb-4 p-4">
+
+        <!--Tabla recorrido de empleados-->
+        <div class="card table-responsive">
+          <table class="table mb-0">
+            <thead>
+              <tr class="table-warning fw-700">
+                <th class="col-1"><p class="text-primary-900">Rut</p></th>
+                <th class="col-4"><p class="text-primary-900">Nombre</p></th>
+                <th class="col-3"><p class="text-primary-900">Liquidaciones</p></th>
+                <th class="col-2"><p class="text-primary-900">Estado</p></th>
+              </tr>
+            </thead>
+
+            <tbody> 
+              <tr>
+                <td>
+                  <p class="mt-2 text-primary-900">12345678-9</p>
+                </td>
+                <td>
+                  <a href="#" class="text-decoration-none">
+                    <p class="text-primary-900">Nombre <i class="fas fa-external-link-alt text-gray-500 fs-sm ms-1"></i> </p>
+                  </a>
+                  <p class="fs-xs text-gray-500">Contrato indefinido</p>
+                </td>
+                <td>
+                  <a href="#" class="text-decoration-none">
+                    <p class="mt-2 text-gray-500">Formulario liquidación <i class="fas fa-external-link-alt"></i></p>
+                  </a>
+                </td>
+                <td>
+                  <div class="pt-2">
+                    <span class="badge-danger">NO REGISTRADO</span>
+                  </div>
+                  
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                  <p class="mt-2 text-primary-900">21336474-6</p>
+                </td>
+                
+                <td>
+                  <a href="#" class="text-decoration-none">
+                    <p class="text-primary-900">Nombre <i class="fas fa-external-link-alt text-gray-500 fs-sm ms-1"></i> </p>
+                  </a>
+                  <p class="fs-xs text-gray-500">Part Time Plazo Fijo</p>
+                </td>
+                <td>
+                  <a href="#" class="text-decoration-none">
+                    <p class="mt-2 text-gray-500">Ver liquidación <i class="fa fa-eye"></i></p>
+                  </a>
+                </td>
+                <td>
+                  <div class="pt-2">
+                    <span class="badge-success">REGISTRADO</span>
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+        <!--Footer liquidaciones-->
+        <div class="d-flex justify-content-between align-items-center mt-4">
+          <!--Contador de contratos-->
+          <div>
+            <p>Contratos totales: 13</p>
+          </div>
+
+          <!-- Paginación Inferior -->
+          <nav aria-label="Page navigation" class="my-4">
+            <ul class="pagination justify-content-center">
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+            </ul>
+          </nav>
+        </div>
+
+      </div>
+    </div>
+      
+  
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+  </body>
+
+
+</html>

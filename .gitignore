@@ -9,8 +9,6 @@
 vendor/assets/stylesheets/styla/styleguide/view
 vendor/assets/stylesheets/styla/icons
 
-*:Zone.Identifier
-
 style.css
 style.css.map
 
