@@ -1,0 +1,14 @@
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+vendor/assets/stylesheets/styla/styleguide/view
+vendor/assets/stylesheets/styla/icons
+
+style.css
+style.css.map
+
